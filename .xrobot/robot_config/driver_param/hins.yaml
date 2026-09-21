@@ -1,0 +1,10 @@
+hins:
+  laser_ip: "192.168.167.53" 
+  laser_port: 8080
+  topic_name: "scan_head"
+  frame_name: "laser_scanner_link_head"
+  spin_frequency_Hz: "30"
+  measure_frequency_kHz: "200"
+  change_param: true 
+  sampling_size_per_position: "2"
+  noise_filter_level: "1"

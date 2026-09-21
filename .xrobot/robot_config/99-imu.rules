@@ -1,0 +1,2 @@
+# SUBSYSTEM=="tty", ATTRS{idVendor}=="1a40", ATTRS{idProduct}=="0101", MODE="0666", SYMLINK+="ttyIMU"
+SUBSYSTEM=="tty", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", MODE="0666", SYMLINK+="ttyIMU"

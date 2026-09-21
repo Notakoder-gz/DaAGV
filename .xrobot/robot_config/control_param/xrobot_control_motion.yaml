@@ -1,0 +1,41 @@
+docker:
+  control_linear_vel: -0.1
+  max_control_linear_vel: -0.3
+  center_dis: 1.2
+  start_control_dis: 0.2
+  end_control_dis: 0.2
+  dock_type: 0
+  camera_anglular: 180
+  pick_delta_angular: 0
+  pick_y_off_set: 0
+  pick_x_off_set: 0
+  pick_target_front: 0.31
+  pick_target_back: 0.8
+  drop_delta_angular: 0
+  drop_y_off_set: 0
+  drop_x_off_set: 0
+  drop_second_check_distance: 1
+  alarm_y_offset: 0.2
+  y_threshold: 0.05
+  sample_numbers: 500
+  map_frame: odom
+  addtional_height: 0
+  forward_distance: 0.2
+  debug_mode: false
+  camera_config:
+    - camera_type: 5
+      camera_ip: 192.168.167.100
+      avoid_direction: 0
+      function:
+        pallet_recognition: 1
+        obstacle: 0
+        goods_check: 0
+        explore_goods: 0
+    - camera_type: 5
+      camera_ip: 192.168.167.101
+      avoid_direction: 1
+      function:
+        pallet_recognition: 0
+        obstacle: 1
+        goods_check: 0
+        explore_goods: 0

@@ -1,0 +1,8 @@
+wanji:
+  hostname: "192.168.12.33"
+  port: "2110"
+  frequency_scan: 1 #0:8hz 1:16hz
+  frame_id: "laser_scanner_link_head"
+  range_min: 0.05
+  range_max: 65.0
+

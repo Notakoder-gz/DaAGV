@@ -1,0 +1,47 @@
+laser_filter_config:
+  replacement_value: 8192.0
+  zero_change_switch: true
+  outlier_filter_switch: true
+  threshold: 0.10
+  box_filter_switch: false
+  box_min_x: -0.45
+  box_max_x: 0.07
+  box_min_y: -0.19
+  box_max_y: 0.19
+  range_filter_switch: true
+  range_min: 0.05
+  range_max: 30
+  angle_filter:
+    - {angle_min: 2.34, angle_max: 3.1415926}
+    - {angle_min: -3.1415926, angle_max: -2.34}
+  shadow_filter_switch: false
+  window: 1
+  neighbors: 2
+  shadow_min_angle: 10
+  shadow_max_angle: 170
+  outlier_enhanced_switch: false
+  laser_fill_switch: false
+  laser_distrotion_switch: false
+  reflector_switch: true
+  diameter: 90
+  reflector_type: 1
+r2000:
+  reflector_adapte_param: -150.0
+  min_intensity: 700
+  max_intensity: 3000
+hins:
+  reflector_adapte_param: -350.0
+  min_intensity: 1200
+  max_intensity: 4000
+wanji:
+  reflector_adapte_param: 0.0
+  min_intensity: 180
+  max_intensity: 300
+oulei:
+  reflector_adapte_param: 0.0
+  min_intensity: 5000
+  max_intensity: 40000
+furui:
+  reflector_adapte_param: 0.0
+  min_intensity: 1000
+  max_intensity: 2500

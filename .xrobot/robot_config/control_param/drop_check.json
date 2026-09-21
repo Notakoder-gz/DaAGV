@@ -1,0 +1,15 @@
+{
+    "alarm_time": 3.0,
+    "check_time": 1.0,
+    "delta_up_height": 180,
+    "eth_weight": 1.0,
+    "ey_weight": 20.0,
+    "goods_check_layer": 3,
+    "is_switch_drop_check": false,
+    "low_up_height": 300,
+    "lqr_max_vel": 0.6,
+    "mode": "write",
+    "steer_weight": 0.8,
+    "stop_distance": 0.5,
+    "try_numbers": 3
+}

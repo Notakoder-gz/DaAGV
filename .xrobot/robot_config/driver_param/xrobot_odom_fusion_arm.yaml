@@ -1,0 +1,4 @@
+car_center_dis: 1.25
+center_bias: 0
+odom_frequency: 100
+motion_model: 1

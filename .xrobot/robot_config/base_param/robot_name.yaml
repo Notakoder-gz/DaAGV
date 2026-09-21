@@ -1,0 +1,6 @@
+﻿bzrobot_core: 
+ robot_type: "Food"
+ robot_name: "InteractiveRobot"
+ robot_serial_number: "123123"
+ product_key: "11"
+ iot_secret: "11"

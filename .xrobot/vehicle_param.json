@@ -1,0 +1,214 @@
+{
+    "diff_walk_param": {},
+    "dispatch": {
+        "agv_id": 2,
+        "category_type": 5,
+        "communication_protocol": "VDA5050",
+        "ip": "10.195.10.195",
+        "is_open_self_online": 0,
+        "is_open_virtual_online": 1,
+        "is_photo_communication": 0,
+        "local_down_port": 8003,
+        "local_status_port": 8001,
+        "local_up_port": 8002,
+        "port": 8001,
+        "rms_down_port": 8093,
+        "rms_status_port": 1883,
+        "rms_up_port": 8092,
+        "sub_category_type": 1,
+        "switch": 1,
+        "vda_connection_qos": 0,
+        "vda_factsheet_qos": 0,
+        "vda_instantaction_qos": 0,
+        "vda_order_qos": 0,
+        "vda_response_qos": 0,
+        "vda_state_qos": 0,
+        "vda_visualization_qos": 0,
+        "vda_zoneset_qos": 0
+    },
+    "fork_control": {
+        "active_fork_link": 1,
+        "fork_end_height": 4000,
+        "fork_front_threshold": 0,
+        "fork_front_value": null,
+        "fork_height_threshold": 10,
+        "fork_height_value": [
+            0
+        ],
+        "fork_lead_threshold": 0,
+        "fork_lead_value": null,
+        "fork_over_time": 30,
+        "fork_pickup_threshold": 0,
+        "fork_pickup_value": [
+            150
+        ],
+        "fork_reset_threshold": 1000000,
+        "fork_rotate_safe_side_move": 4005,
+        "fork_rotate_threshold": 0,
+        "fork_rotate_value": null,
+        "fork_side_safe_move_angle": 105,
+        "fork_side_threshold": 222,
+        "fork_side_value": [
+            0,
+            0,
+            0
+        ],
+        "fork_space_threshold": 0,
+        "fork_space_value": null,
+        "fork_start_height": 2000,
+        "fork_walk_height": 150,
+        "rock_drop_down_switch": 0,
+        "rock_pick_up_switch": 0
+    },
+    "jack_control": {
+        "composite": {
+            "x_threshold": 0,
+            "y_threshold": 0,
+            "z_threshold": 0
+        },
+        "composite_x_over_time": 1,
+        "composite_y_over_time": 1,
+        "composite_z_over_time": 1,
+        "height_threshold": 3,
+        "height_value": [
+            0,
+            0,
+            33
+        ],
+        "jack_height_over_time": 30,
+        "roller_delay_time": 2,
+        "roller_over_time": 30,
+        "rotate_threshold": 2,
+        "rotate_value": [
+            60,
+            90
+        ]
+    },
+    "motion_param": {
+        "avoid_check_distance": 3.0,
+        "avoid_max_distance": 1.5,
+        "avoid_safe_distance": 0.30000001192092896,
+        "bad_qr_number": 2,
+        "diff_param": {
+            "k_curve": 1.0,
+            "k_line": 1.0,
+            "max_head": 2.5,
+            "min_curve_head": 0.5,
+            "min_line_head": 1.0
+        },
+        "double_param": {
+            "k_curve": 1.0,
+            "k_line": 1.0,
+            "max_head": 2.0,
+            "min_curve_head": 0.5,
+            "min_line_head": 1.0
+        },
+        "footprint": [
+            {
+                "index": 0,
+                "value": [
+                    {
+                        "x": 0.6000000238418579,
+                        "y": 0.4300000071525574
+                    },
+                    {
+                        "x": 0.6000000238418579,
+                        "y": -0.4300000071525574
+                    },
+                    {
+                        "x": -0.6000000238418579,
+                        "y": -0.4300000071525574
+                    },
+                    {
+                        "x": -0.6000000238418579,
+                        "y": 0.4300000071525574
+                    }
+                ]
+            }
+        ],
+        "fork_max_back_vel": 0.6,
+        "goods_rotate_w_max": 0.6,
+        "k_dcc": 1.2,
+        "lateral_offset": 0.3,
+        "line_v_max": 1.5,
+        "line_v_min": 0.05,
+        "line_w_max": 0.4,
+        "line_w_min": 0.05,
+        "map_line_threshold": 0.30000001192092896,
+        "max_acc": 0.03,
+        "min_acc": 0.02,
+        "one_collision_vel": 0.5,
+        "online_distance": 5.0,
+        "online_max_vel": 0.3,
+        "rotate_acc_ang": 10.0,
+        "rotate_dec_ang": 15.0,
+        "rotate_w_max": 0.6,
+        "rotate_w_min": 0.06,
+        "single_param": {
+            "k_curve": 1.0,
+            "k_line": 1.0,
+            "max_head": 2.0,
+            "min_curve_head": 0.5,
+            "min_line_head": 1.0
+        },
+        "two_collision_vel": 0.3,
+        "vertical_offset": 0.3
+    },
+    "rms_config": {
+        "category_type": 0,
+        "charge_finish_percent": 72,
+        "charge_percent": 30,
+        "charge_to_task_percent": 70,
+        "max_ang": 800,
+        "max_vel": 1000,
+        "stop_time": 1,
+        "sub_category_type": 3,
+        "walk_safe_height": 200
+    },
+    "single_steering_walk_param": {
+        "BackDccelerateDistance": 1000,
+        "BackIsAngle": 0.0,
+        "BackVeerOffset": 0.0,
+        "D": 0.0,
+        "DrivingWheelRotateAcc": 100,
+        "DrivingWheelRotateSpeedLimit": 800,
+        "ForkExeDirDevThresholdValue": 1.0,
+        "ForkExeLatDevThresholdValue": 1000,
+        "ForkExeLgtDevThresholdValue": 1000,
+        "ForwardVeerOffset": 0.0,
+        "FrontDccelerateDistance": 1000,
+        "I": 0.0,
+        "P": 0.025,
+        "PreviewDistanceBack": 1000,
+        "PreviewDistanceCurve": 1000,
+        "PreviewDistanceFront": 1000,
+        "TurnLeftVeerOffset": 0.0,
+        "TurnRightVeerOffset": 0.0,
+        "VehSafeControlAccelerate": 100,
+        "VehSafeControlVelocity": 1500,
+        "VehSafeControlVelocityEnd": 50
+    },
+    "vehicle_param": {
+        "AutoTimeFlg": 0,
+        "BackWheelOffset": 1095,
+        "DriSteerDeptDis": 0,
+        "ForkCentrelOffset": 1300,
+        "FrontWheelOffset": -81,
+        "LightFlg": 0,
+        "ManulTimFlg": 0,
+        "MaxManuleTheta": 0.2,
+        "MaxManuleVel": 0.2,
+        "MotionModel": 1,
+        "Password": "123",
+        "UseRockerFlg": 1,
+        "back_tim": 0,
+        "body_length": 1200,
+        "body_width": 600,
+        "camera_safe": 0,
+        "front_tim": 0,
+        "left_tim": 0,
+        "navi_safe_flg": 0,
+        "right_tim": 0,
+        "voice_volume": 0
+    }
+}

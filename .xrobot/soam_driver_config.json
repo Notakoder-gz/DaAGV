@@ -1,0 +1,10 @@
+{
+    "check_disconnect_timeout": 3.0,
+    "dispatch_server_ip": "127.0.0.1",
+    "enable_check_disconnect": false,
+    "single_ping_timeout": 1.0,
+    "soam_scan_interval": 2,
+    "soam_scan_timeout": 5,
+    "soam_switch_diff_value": 8,
+    "soam_switch_threshold": 40
+}

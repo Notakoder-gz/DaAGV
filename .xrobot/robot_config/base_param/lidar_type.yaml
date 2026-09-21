@@ -1,0 +1,4 @@
+lidar_type: 3dwj_32
+lidar_distance: 30
+brand: BR-F10-ZL-XP1CUSTOM
+slam_match_ratio: 0.3

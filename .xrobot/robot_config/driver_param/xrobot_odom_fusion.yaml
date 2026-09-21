@@ -1,0 +1,4 @@
+car_center_dis: 2.82
+center_bias: 0
+odom_frequency: 50
+motion_model: 1 #0:差分 1：单舵论 2：双舵轮

@@ -1,0 +1,714 @@
+{
+    "algrithom_model": {
+        "diff_model": {
+            "diff2midle": 0.0,
+            "diff_wheel_separation": 0.766,
+            "left_ratio": 15.0,
+            "left_wheel_radius": 0.10662322,
+            "odom_cal_type": 0,
+            "right_ratio": 15.0,
+            "right_wheel_radius": 0.10662322,
+            "sum_encoder": 150000
+        },
+        "double_diff_model": {
+            "d": 0,
+            "double_diff_model_ratio": 21.0,
+            "double_diff_model_wheel_radius": 0.10662322,
+            "double_diff_model_wheelbase": 0.5,
+            "front_diff_wheel_separation": 0.05,
+            "i": 60,
+            "odom_cal_type": 0,
+            "p": 100,
+            "sum_encoder": 10000,
+            "tail_diff_wheel_separation": 0.05,
+            "wheel_angle_limit": 120.0
+        },
+        "double_model": {
+            "big_pid_d": 0.0,
+            "big_pid_i": 0.0,
+            "big_pid_p": 0.06,
+            "debug": false,
+            "double_model_angle_with_baseline": 0.0,
+            "double_model_motor1_radius": 0.10662322,
+            "double_model_motor2_radius": 0.10662322,
+            "double_model_ratio": 23.4,
+            "double_model_wheelbase": 0.5,
+            "double_model_wheeldistance": 0.5,
+            "hard_limit_angle": 160.0,
+            "max_add_steer": 15.0,
+            "odom_cal_type": 0,
+            "small_pid_d": 0.0,
+            "small_pid_i": 0.0,
+            "small_pid_p": 0.04,
+            "sum_encoder": 10000,
+            "wheel_angle_limit": 120.0
+        },
+        "four_model": {
+            "big_pid_d": 0.0,
+            "big_pid_i": 0.0,
+            "big_pid_p": 0.03,
+            "debug": false,
+            "hard_limit_angle": 135.0,
+            "max_add_steer": 15.0,
+            "motor1_pose_x": 0.24,
+            "motor1_pose_y": 0.123,
+            "motor1_radius": 0.10662322,
+            "motor2_pose_x": 0.24,
+            "motor2_pose_y": -0.123,
+            "motor2_radius": 0.10662322,
+            "motor3_pose_x": -0.24,
+            "motor3_pose_y": -0.123,
+            "motor3_radius": 0.10662322,
+            "motor4_pose_x": -0.24,
+            "motor4_pose_y": 0.123,
+            "motor4_radius": 0.10662322,
+            "odom_cal_type": 0,
+            "ratio": 0.05,
+            "small_pid_d": 0.0,
+            "small_pid_i": 0.0,
+            "small_pid_p": 0.05,
+            "steer_ratio": 0.05,
+            "sum_encoder": 10000,
+            "wheel_angle_limit": 120.0
+        },
+        "single_model": {
+            "odom_cal_type": 0,
+            "single_model_motor_base": 1.2,
+            "single_model_motor_bias": 0.0,
+            "single_model_ratio": 24.68,
+            "single_model_wheel_radius": 0.10662322,
+            "sum_encoder": 100000
+        }
+    },
+    "can_model": {
+        "battery_model": {
+            "can_bitrate": 125,
+            "can_type": "socket_can",
+            "check_min_cell_voltage": false,
+            "enable": true,
+            "low_cell_voltage_alarm": false,
+            "min_cell_voltage": 1000,
+            "port": "can1"
+        },
+        "lift_motor_model": {
+            "brand_type": "Kinko",
+            "can_bitrate": 125,
+            "can_type": "socket_can",
+            "enable": false,
+            "manual_speed": 300,
+            "max_rpm": 1500,
+            "motor_id": 2,
+            "port": "can0",
+            "up_encoder_resolution": 10000,
+            "up_gear_ratio": 10.0,
+            "up_high_limit_mm": 100,
+            "up_low_limit_mm": 0,
+            "up_motor_go_zero_speed_ratio": 0.3,
+            "up_outer_circle_perimeter": 10.0,
+            "up_protection_range": 0.0
+        },
+        "roller_model": {
+            "brand_type": "Kinko",
+            "can_bitrate": 125,
+            "can_type": "socket_can",
+            "com_type": "io",
+            "enable": false,
+            "manual_speed": 500,
+            "max_rpm": 1000,
+            "motor_id": 3,
+            "port": "can0",
+            "roller_encoder_resolution": 10000,
+            "roller_gear_ratio": 1.0,
+            "roller_outer_circle_perimeter": 4.0
+        },
+        "rotate_motor_model": {
+            "brand_type": "Kinko",
+            "can_bitrate": 125,
+            "can_type": "socket_can",
+            "enable": false,
+            "manual_speed": 300,
+            "max_rpm": 4000,
+            "motor_id": 3,
+            "port": "can0",
+            "turn_ccw_offset": 0.0,
+            "turn_cw_offset": 0.0,
+            "turn_encoder_resolution": 65536,
+            "turn_gear_ratio": 115.8536,
+            "turn_left_limit_deg": 90.0,
+            "turn_motor_go_zero_speed_ratio": 0.1,
+            "turn_outer_circle_radius": 0.1,
+            "turn_protection_range": 0.0,
+            "turn_right_limit_deg": -90.0,
+            "turn_trapezoidal_acceleration": 200,
+            "turn_trapezoidal_deceleration": 200,
+            "turn_trapezoidal_velocity": 3000
+        },
+        "stretch_motor_model": {
+            "brand_type": "Kinko",
+            "can_bitrate": 125,
+            "can_type": "socket_can",
+            "enable": false,
+            "manual_speed": 300,
+            "max_rpm": 1000,
+            "motor_id": 3,
+            "port": "can0",
+            "stretch_back_limit_mm": 0,
+            "stretch_encoder_resolution": 65536,
+            "stretch_front_limit_mm": 100,
+            "stretch_gear_ratio": 1.0,
+            "stretch_motor_go_zero_mode": 17,
+            "stretch_motor_go_zero_offset_mode": 0,
+            "stretch_motor_go_zero_offset_value": 0.0,
+            "stretch_motor_go_zero_speed_ratio": 0.3,
+            "stretch_outer_circle_perimeter": 4.0,
+            "stretch_protection_range": 0.0,
+            "stretch_use_abs_mode": false,
+            "stretch_use_io_limit_mode": false
+        },
+        "walk_motor_model": {
+            "brand_type": "Xp1Custom",
+            "can_bitrate": 125,
+            "can_type": "socket_can",
+            "diff_model_param": {
+                "left_motor_id": 1,
+                "right_motor_id": 2
+            },
+            "double_diff_model_param": {
+                "back_encoder_id": 9,
+                "back_left_motor_id": 3,
+                "back_right_motor_id": 4,
+                "encoder_brand": "Posital",
+                "front_encoder_id": 8,
+                "front_left_motor_id": 1,
+                "front_right_motor_id": 2,
+                "max_encoder_value": 32767
+            },
+            "double_model_param": {
+                "back_motor_id": 2,
+                "back_turn_motor_id": 4,
+                "front_motor_id": 1,
+                "front_turn_motor_id": 3
+            },
+            "double_wheel_type": 2,
+            "enable": true,
+            "enable_hardware_stop": false,
+            "encoder_can_param": {
+                "can_bitrate": 125,
+                "can_type": "socket_can",
+                "port": "can1"
+            },
+            "encoder_over_time": 3,
+            "encoder_ratio": 0.0,
+            "encoder_stop_threshold": 0,
+            "fork_side_left_limit_mm": 150.0,
+            "fork_side_manual_left_speed": 60,
+            "fork_side_manual_right_speed": 60,
+            "fork_side_right_limit_mm": 0.0,
+            "fork_stretch_back_limit_mm": 0.0,
+            "fork_stretch_front_limit_mm": 150.0,
+            "fork_stretch_manual_back_speed": 60,
+            "fork_stretch_manual_front_speed": 60,
+            "fork_tilt_back_limit_angle": 3.0,
+            "fork_tilt_front_limit_angle": -3.0,
+            "forklift_down_limit_mm": 0.0,
+            "forklift_up_limit_mm": 150.0,
+            "four_model_param": {
+                "turn_motor1_id": 3,
+                "turn_motor2_id": 7,
+                "turn_motor3_id": 4,
+                "turn_motor4_id": 8,
+                "walk_motor1_id": 1,
+                "walk_motor2_id": 5,
+                "walk_motor3_id": 2,
+                "walk_motor4_id": 6
+            },
+            "is_use_singlewheel_rotarymotor": false,
+            "manual_fork_down_speed": 50,
+            "manual_fork_up_speed": 60,
+            "manual_speed": 300,
+            "max_quick_count": 20,
+            "max_rpm": 5000,
+            "max_up_ratio": 100,
+            "odom_rate": 100,
+            "port": "can0",
+            "quick_stop_duration": 30,
+            "single_model_param": {
+                "rotate_motor_id": 2,
+                "walk_motor_id": 1
+            },
+            "singlewheel_turn_encoder_resolution": 65536,
+            "singlewheel_turn_gear_ratio": 252.52,
+            "singlewheel_turn_offset": -3.5,
+            "singlewheel_turn_trapezoidal_acceleration": 100,
+            "singlewheel_turn_trapezoidal_deceleration": 300,
+            "singlewheel_turn_trapezoidal_velocity": 4000,
+            "speed_sampling_time": 10,
+            "stretch_encoder_ratio": 0.0,
+            "use_tilt_sensor": false,
+            "use_wire_encoder": false,
+            "use_wire_stretch_encoder": false,
+            "walk_encoder_resolution": 10000,
+            "walk_gear_ratio": 15.0,
+            "walk_outer_circle_radius": 0.09,
+            "walk_outer_circle_radius_loss": 1.0,
+            "wire_encoder_second_conn": false
+        },
+        "width_motor_model": {
+            "brand_type": "Kinko",
+            "can_bitrate": 125,
+            "can_type": "socket_can",
+            "enable": false,
+            "manual_speed": 500,
+            "max_rpm": 650,
+            "motor_id": 6,
+            "port": "can1",
+            "width_encoder_resolution": 65536,
+            "width_gear_ratio": 1.0,
+            "width_motor_go_zero_mode": 17,
+            "width_motor_go_zero_speed_ratio": 0.3,
+            "width_outer_circle_perimeter": 4.0
+        }
+    },
+    "io_model": {
+        "arm_robot_logic_electric": {
+            "enable": false,
+            "pin": 51
+        },
+        "buzzer": {
+            "enable": false,
+            "pin": 0
+        },
+        "charge_circle": {
+            "enable": true,
+            "pin": 150
+        },
+        "collition_edge": {
+            "enable": true,
+            "pin": 37
+        },
+        "disable_button": {
+            "enable": false,
+            "pin": 143
+        },
+        "door_close": {
+            "enable": false,
+            "pin": 10
+        },
+        "equipment_logic_electric": {
+            "enable": false,
+            "pin": 84
+        },
+        "fork_down_limit": {
+            "enable": false,
+            "pin": 40,
+            "reverse": false
+        },
+        "fork_up_limit": {
+            "enable": false,
+            "pin": 135,
+            "reverse": false
+        },
+        "four_workstation_electric": {
+            "enable": false,
+            "pin": 40
+        },
+        "front_lidar": {
+            "enable": false,
+            "pin1": {
+                "pin": 42
+            },
+            "pin2": {
+                "pin": 43
+            },
+            "pin3": {
+                "pin": 62
+            },
+            "pin4": {
+                "pin": 63
+            },
+            "pin5": {
+                "pin": 57
+            },
+            "pin6": {
+                "pin": 60
+            },
+            "pin7": {
+                "pin": 61
+            },
+            "pin8": {
+                "pin": 76
+            }
+        },
+        "handle_button": {
+            "enable": true,
+            "pin": 38
+        },
+        "left_fork_collition": {
+            "enable": false,
+            "pin": 135
+        },
+        "left_gear_electric": {
+            "enable": true,
+            "pin": 39
+        },
+        "left_goods_arrive": {
+            "enable": true,
+            "pin": 139
+        },
+        "lift_brake": {
+            "enable": false,
+            "pin": 51
+        },
+        "light_green": {
+            "enable": false,
+            "pin": 55
+        },
+        "light_red": {
+            "enable": false,
+            "pin": 20
+        },
+        "light_yellow": {
+            "enable": false,
+            "pin": 50
+        },
+        "logic_electric": {
+            "enable": false,
+            "pin": 84
+        },
+        "lower_lifting": {
+            "enable": false,
+            "pin": 40,
+            "reverse": false
+        },
+        "lpper_lifting": {
+            "enable": false,
+            "pin": 40,
+            "reverse": false
+        },
+        "one_roller_layer": {
+            "back_push_rod": {
+                "enable": false,
+                "push_rod_control": {
+                    "pin": 57
+                },
+                "push_rod_lower_limit": {
+                    "pin": 135
+                },
+                "push_rod_upper_limit": {
+                    "pin": 143
+                }
+            },
+            "enable": false,
+            "enable_pin_index": 0,
+            "front_push_rod": {
+                "enable": false,
+                "push_rod_control": {
+                    "pin": 57
+                },
+                "push_rod_lower_limit": {
+                    "pin": 43
+                },
+                "push_rod_upper_limit": {
+                    "pin": 62
+                }
+            },
+            "goods_photoelectric1": {
+                "enable": false,
+                "pin": 135
+            },
+            "goods_photoelectric2": {
+                "enable": false,
+                "pin": 40
+            },
+            "goods_photoelectric3": {
+                "enable": false,
+                "pin": 41
+            },
+            "roller_err_state": {
+                "enable": false,
+                "pin": 10
+            },
+            "roller_forward": {
+                "pin": 60
+            },
+            "roller_reversal": {
+                "pin": 61
+            }
+        },
+        "one_workstation_electric": {
+            "enable": false,
+            "pin": 40
+        },
+        "release_button": {
+            "enable": false,
+            "pin": 63
+        },
+        "reset_button": {
+            "enable": true,
+            "pin": 141
+        },
+        "right_fork_collition": {
+            "enable": false,
+            "pin": 40
+        },
+        "right_gear_electric": {
+            "enable": true,
+            "pin": 36
+        },
+        "right_goods_arrive": {
+            "enable": true,
+            "pin": 143
+        },
+        "side_left_limit": {
+            "enable": false,
+            "pin": 40,
+            "reverse": false
+        },
+        "side_right_limit": {
+            "enable": false,
+            "pin": 40,
+            "reverse": false
+        },
+        "stop_button": {
+            "enable": true,
+            "pin": 140
+        },
+        "switch_button": {
+            "enable": true,
+            "pin": 142
+        },
+        "tail_lidar": {
+            "enable": false,
+            "pin1": {
+                "pin": 143
+            },
+            "pin2": {
+                "pin": 135
+            },
+            "pin3": {
+                "pin": 40
+            },
+            "pin4": {
+                "pin": 41
+            },
+            "pin5": {
+                "pin": 52
+            },
+            "pin6": {
+                "pin": 53
+            },
+            "pin7": {
+                "pin": 54
+            },
+            "pin8": {
+                "pin": 56
+            }
+        },
+        "three_workstation_electric": {
+            "enable": false,
+            "pin": 40
+        },
+        "two_roller_layer": {
+            "back_push_rod": {
+                "enable": false,
+                "push_rod_control": {
+                    "pin": 57
+                },
+                "push_rod_lower_limit": {
+                    "pin": 135
+                },
+                "push_rod_upper_limit": {
+                    "pin": 143
+                }
+            },
+            "enable": false,
+            "enable_pin_index": 0,
+            "front_push_rod": {
+                "enable": false,
+                "push_rod_control": {
+                    "pin": 57
+                },
+                "push_rod_lower_limit": {
+                    "pin": 135
+                },
+                "push_rod_upper_limit": {
+                    "pin": 143
+                }
+            },
+            "goods_photoelectric1": {
+                "enable": false,
+                "pin": 130
+            },
+            "goods_photoelectric2": {
+                "enable": false,
+                "pin": 138
+            },
+            "goods_photoelectric3": {
+                "enable": false,
+                "pin": 139
+            },
+            "roller_forward": {
+                "pin": 60
+            },
+            "roller_reversal": {
+                "pin": 61
+            }
+        },
+        "two_workstation_electric": {
+            "enable": false,
+            "pin": 40
+        },
+        "wheel_stop": {
+            "enable": false,
+            "pin": 51
+        }
+    },
+    "mode": "write",
+    "uart_model": {
+        "back_left_motor_model": {
+            "boardrate": 115200,
+            "brand_type": "ZhiChuang",
+            "enable": false,
+            "port": "ttyS3",
+            "slave_id": 5
+        },
+        "back_lidar_model": {
+            "boardrate": 115200,
+            "brand_type": "HinSon",
+            "enable": false,
+            "port": "ttyS7",
+            "slave_id": 2
+        },
+        "back_right_motor_model": {
+            "boardrate": 115200,
+            "brand_type": "ZhiChuang",
+            "enable": false,
+            "port": "ttyS3",
+            "slave_id": 6
+        },
+        "battery_model": {
+            "boardrate": 115200,
+            "brand_type": "H56",
+            "enable": false,
+            "full_current": 13.0,
+            "port": "ttyS0",
+            "slave_id": 1
+        },
+        "body_tilt_imu_model": {
+            "boardrate": 115200,
+            "brand_type": "WITHWT605",
+            "enable": false,
+            "port": "ttyS0",
+            "slave_id": 1,
+            "zero_offset": 0.0
+        },
+        "down_camera_model": {
+            "boardrate": 115200,
+            "brand_type": "DH",
+            "enable": false,
+            "port": "ttyS1",
+            "slave_id": 0
+        },
+        "down_lidar_model": {
+            "boardrate": 115200,
+            "brand_type": "HinSon",
+            "enable": false,
+            "port": "ttyS0",
+            "slave_id": 1
+        },
+        "fork_tilt_imu_model": {
+            "boardrate": 115200,
+            "brand_type": "WITHWT605",
+            "enable": false,
+            "port": "ttyS0",
+            "slave_id": 2,
+            "zero_offset": 0.0
+        },
+        "front_left_motor_model": {
+            "boardrate": 115200,
+            "brand_type": "ZhiChuang",
+            "enable": false,
+            "port": "ttyS3",
+            "slave_id": 3
+        },
+        "front_lidar_model": {
+            "boardrate": 115200,
+            "brand_type": "HinSon",
+            "enable": false,
+            "port": "ttyS7",
+            "slave_id": 1
+        },
+        "front_right_motor_model": {
+            "boardrate": 115200,
+            "brand_type": "ZhiChuang",
+            "enable": false,
+            "port": "ttyS3",
+            "slave_id": 4
+        },
+        "left_lidar_model": {
+            "boardrate": 115200,
+            "brand_type": "HinSon_FP",
+            "enable": true,
+            "port": "ttyS7",
+            "slave_id": 1
+        },
+        "light_model": {
+            "boardrate": 115200,
+            "brand_type": "XY75",
+            "enable": true,
+            "port": "ttyS3",
+            "slave_id": 1
+        },
+        "remote_model": {
+            "boardrate": 115200,
+            "brand_type": "METTLER",
+            "enable": false,
+            "port": "ttyS0",
+            "slave_id": 1
+        },
+        "right_lidar_model": {
+            "boardrate": 115200,
+            "brand_type": "HinSon_FP",
+            "enable": false,
+            "port": "ttyS7",
+            "slave_id": 2
+        },
+        "tilt_model": {
+            "boardrate": 115200,
+            "brand_type": "GEERT",
+            "enable": false,
+            "port": "ttyS0",
+            "scale": 1.0,
+            "slave_id": 1,
+            "zero_offset": 0.0
+        },
+        "up_camera_model": {
+            "boardrate": 115200,
+            "brand_type": "DH",
+            "enable": false,
+            "port": "ttyS1",
+            "slave_id": 1
+        },
+        "up_lidar_model": {
+            "boardrate": 115200,
+            "brand_type": "HinSon",
+            "enable": false,
+            "port": "ttyS0",
+            "slave_id": 1
+        },
+        "voice_model": {
+            "boardrate": 115200,
+            "brand_type": "AIJIWEIS24",
+            "enable": true,
+            "port": "ttyS5",
+            "slave_id": 1
+        },
+        "weight_model": {
+            "boardrate": 115200,
+            "brand_type": "METTLER",
+            "enable": false,
+            "port": "ttyS0",
+            "slave_id": 1
+        }
+    }
+}

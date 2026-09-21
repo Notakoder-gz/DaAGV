@@ -1,0 +1,4 @@
+global_params:  
+  max_vel_lin: 1.2
+  max_vel_th: 0.8
+  max_acceleration: 0.4 #0.5

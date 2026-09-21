@@ -1,0 +1,9 @@
+{
+  "charge_time": [],
+  "limit_threshold": 20,
+  "low_threshold": 30,
+  "max_threshold": 95,
+  "param_id": 2,
+  "switch": 1,
+  "work_threshold": 50
+}

@@ -1,0 +1,8 @@
+scanner_ip: "192.168.167.51"
+frame_id: "laser_scanner_link_head"
+scan_frequency: 35
+samples_per_scan: 2400
+param_print: true
+furui:
+ scan_frequency: 30
+ samples_per_scan: 3600

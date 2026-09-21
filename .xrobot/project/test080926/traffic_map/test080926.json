@@ -1,0 +1,876 @@
+{
+    "lines": [
+        {
+            "allow_back": true,
+            "allow_close_fork_foot_photoelectric": false,
+            "allow_close_fork_foot_photoelectric_drop": false,
+            "allow_obstacle_avoid": false,
+            "body_dir": 0,
+            "code": 1,
+            "collision": {
+                "back": 3,
+                "forward": 1,
+                "left": 5,
+                "right": 4,
+                "rotate": 2
+            },
+            "curve_control_points": [],
+            "fork_height_limit": {
+                "highest": 100000,
+                "lowest": -1
+            },
+            "full_collision": {
+                "back": 3,
+                "forward": 1,
+                "left": 5,
+                "right": 4,
+                "rotate": 2
+            },
+            "full_speed": 400,
+            "goods_dir": 0,
+            "name": "1",
+            "navigation_type": 1,
+            "obstacle_avoid_dis_threshold": 1000,
+            "obstacle_avoid_type": 0,
+            "omni_body_dir": 0,
+            "pallet_collision": [],
+            "path_dir": 0,
+            "path_length": 1000.0,
+            "remark": "",
+            "reposition_path": [],
+            "reposition_sites": [],
+            "sites": [
+                0,
+                1
+            ],
+            "speed": 400,
+            "type": 1
+        },
+        {
+            "allow_back": true,
+            "allow_close_fork_foot_photoelectric": false,
+            "allow_close_fork_foot_photoelectric_drop": false,
+            "allow_obstacle_avoid": false,
+            "body_dir": 0,
+            "code": 2,
+            "collision": {
+                "back": 3,
+                "forward": 1,
+                "left": 5,
+                "right": 4,
+                "rotate": 2
+            },
+            "curve_control_points": [],
+            "fork_height_limit": {
+                "highest": 100000,
+                "lowest": -1
+            },
+            "full_collision": {
+                "back": 3,
+                "forward": 1,
+                "left": 5,
+                "right": 4,
+                "rotate": 2
+            },
+            "full_speed": 400,
+            "goods_dir": 0,
+            "name": "2",
+            "navigation_type": 1,
+            "obstacle_avoid_dis_threshold": 1000,
+            "obstacle_avoid_type": 0,
+            "omni_body_dir": 0,
+            "pallet_collision": [],
+            "path_dir": 0,
+            "path_length": 1000.0,
+            "remark": "",
+            "reposition_path": [],
+            "reposition_sites": [],
+            "sites": [
+                1,
+                2
+            ],
+            "speed": 400,
+            "type": 1
+        },
+        {
+            "allow_back": true,
+            "allow_close_fork_foot_photoelectric": false,
+            "allow_close_fork_foot_photoelectric_drop": false,
+            "allow_obstacle_avoid": false,
+            "body_dir": 0,
+            "code": 3,
+            "collision": {
+                "back": 3,
+                "forward": 1,
+                "left": 5,
+                "right": 4,
+                "rotate": 2
+            },
+            "curve_control_points": [],
+            "fork_height_limit": {
+                "highest": 100000,
+                "lowest": -1
+            },
+            "full_collision": {
+                "back": 3,
+                "forward": 1,
+                "left": 5,
+                "right": 4,
+                "rotate": 2
+            },
+            "full_speed": 400,
+            "goods_dir": 0,
+            "name": "3",
+            "navigation_type": 1,
+            "obstacle_avoid_dis_threshold": 1000,
+            "obstacle_avoid_type": 0,
+            "omni_body_dir": 0,
+            "pallet_collision": [],
+            "path_dir": 0,
+            "path_length": 1000.0,
+            "remark": "",
+            "reposition_path": [],
+            "reposition_sites": [],
+            "sites": [
+                2,
+                3
+            ],
+            "speed": 400,
+            "type": 1
+        },
+        {
+            "allow_back": true,
+            "allow_close_fork_foot_photoelectric": false,
+            "allow_close_fork_foot_photoelectric_drop": false,
+            "allow_obstacle_avoid": false,
+            "body_dir": 0,
+            "code": 7,
+            "collision": {
+                "back": 3,
+                "forward": 1,
+                "left": 5,
+                "right": 4,
+                "rotate": 2
+            },
+            "curve_control_points": [
+                {
+                    "x": 3119,
+                    "y": 1112
+                },
+                {
+                    "x": 1968,
+                    "y": 1166
+                }
+            ],
+            "fork_height_limit": {
+                "highest": 100000,
+                "lowest": -1
+            },
+            "full_collision": {
+                "back": 3,
+                "forward": 1,
+                "left": 5,
+                "right": 4,
+                "rotate": 2
+            },
+            "full_speed": 400,
+            "goods_dir": 0,
+            "name": "7",
+            "navigation_type": 1,
+            "obstacle_avoid_dis_threshold": 1000,
+            "obstacle_avoid_type": 0,
+            "omni_body_dir": 0,
+            "pallet_collision": [],
+            "path_dir": 0,
+            "path_length": 3415.8665,
+            "remark": "",
+            "reposition_path": [],
+            "reposition_sites": [],
+            "sites": [
+                3,
+                8
+            ],
+            "speed": 400,
+            "type": 2
+        },
+        {
+            "allow_back": true,
+            "allow_close_fork_foot_photoelectric": false,
+            "allow_close_fork_foot_photoelectric_drop": false,
+            "allow_obstacle_avoid": false,
+            "body_dir": 0,
+            "code": 8,
+            "collision": {
+                "back": 3,
+                "forward": 1,
+                "left": 5,
+                "right": 4,
+                "rotate": 2
+            },
+            "curve_control_points": [],
+            "fork_height_limit": {
+                "highest": 100000,
+                "lowest": -1
+            },
+            "full_collision": {
+                "back": 3,
+                "forward": 1,
+                "left": 5,
+                "right": 4,
+                "rotate": 2
+            },
+            "full_speed": 400,
+            "goods_dir": 0,
+            "name": "8",
+            "navigation_type": 1,
+            "obstacle_avoid_dis_threshold": 1000,
+            "obstacle_avoid_type": 0,
+            "omni_body_dir": 0,
+            "pallet_collision": [],
+            "path_dir": 0,
+            "path_length": 3199.3027,
+            "remark": "",
+            "reposition_path": [],
+            "reposition_sites": [],
+            "sites": [
+                8,
+                9
+            ],
+            "speed": 400,
+            "type": 1
+        },
+        {
+            "allow_back": true,
+            "allow_close_fork_foot_photoelectric": false,
+            "allow_close_fork_foot_photoelectric_drop": false,
+            "allow_obstacle_avoid": false,
+            "body_dir": 0,
+            "code": 9,
+            "collision": {
+                "back": 3,
+                "forward": 1,
+                "left": 5,
+                "right": 4,
+                "rotate": 2
+            },
+            "curve_control_points": [],
+            "fork_height_limit": {
+                "highest": 100000,
+                "lowest": -1
+            },
+            "full_collision": {
+                "back": 3,
+                "forward": 1,
+                "left": 5,
+                "right": 4,
+                "rotate": 2
+            },
+            "full_speed": 400,
+            "goods_dir": 0,
+            "name": "9",
+            "navigation_type": 1,
+            "obstacle_avoid_dis_threshold": 1000,
+            "obstacle_avoid_type": 0,
+            "omni_body_dir": 0,
+            "pallet_collision": [],
+            "path_dir": 0,
+            "path_length": 2197.027,
+            "remark": "",
+            "reposition_path": [],
+            "reposition_sites": [],
+            "sites": [
+                9,
+                10
+            ],
+            "speed": 400,
+            "type": 1
+        },
+        {
+            "allow_back": true,
+            "allow_close_fork_foot_photoelectric": false,
+            "allow_close_fork_foot_photoelectric_drop": false,
+            "allow_obstacle_avoid": false,
+            "body_dir": 0,
+            "code": 10,
+            "collision": {
+                "back": 3,
+                "forward": 1,
+                "left": 5,
+                "right": 4,
+                "rotate": 2
+            },
+            "curve_control_points": [
+                {
+                    "x": 2017,
+                    "y": 8748
+                },
+                {
+                    "x": 2517,
+                    "y": 9759
+                }
+            ],
+            "fork_height_limit": {
+                "highest": 100000,
+                "lowest": -1
+            },
+            "full_collision": {
+                "back": 3,
+                "forward": 1,
+                "left": 5,
+                "right": 4,
+                "rotate": 2
+            },
+            "full_speed": 400,
+            "goods_dir": 0,
+            "name": "10",
+            "navigation_type": 1,
+            "obstacle_avoid_dis_threshold": 1000,
+            "obstacle_avoid_type": 0,
+            "omni_body_dir": 0,
+            "pallet_collision": [],
+            "path_dir": 0,
+            "path_length": 2922.08,
+            "remark": "",
+            "reposition_path": [],
+            "reposition_sites": [],
+            "sites": [
+                10,
+                11
+            ],
+            "speed": 400,
+            "type": 2
+        },
+        {
+            "allow_back": true,
+            "allow_close_fork_foot_photoelectric": false,
+            "allow_close_fork_foot_photoelectric_drop": false,
+            "allow_obstacle_avoid": false,
+            "body_dir": 0,
+            "code": 11,
+            "collision": {
+                "back": 3,
+                "forward": 1,
+                "left": 5,
+                "right": 4,
+                "rotate": 2
+            },
+            "curve_control_points": [],
+            "fork_height_limit": {
+                "highest": 100000,
+                "lowest": -1
+            },
+            "full_collision": {
+                "back": 3,
+                "forward": 1,
+                "left": 5,
+                "right": 4,
+                "rotate": 2
+            },
+            "full_speed": 400,
+            "goods_dir": 0,
+            "name": "11",
+            "navigation_type": 1,
+            "obstacle_avoid_dis_threshold": 1000,
+            "obstacle_avoid_type": 0,
+            "omni_body_dir": 0,
+            "pallet_collision": [],
+            "path_dir": 0,
+            "path_length": 2882.6667,
+            "remark": "",
+            "reposition_path": [],
+            "reposition_sites": [],
+            "sites": [
+                12,
+                13
+            ],
+            "speed": 400,
+            "type": 1
+        },
+        {
+            "allow_back": true,
+            "allow_close_fork_foot_photoelectric": false,
+            "allow_close_fork_foot_photoelectric_drop": false,
+            "allow_obstacle_avoid": false,
+            "body_dir": 0,
+            "code": 12,
+            "collision": {
+                "back": 3,
+                "forward": 1,
+                "left": 5,
+                "right": 4,
+                "rotate": 2
+            },
+            "curve_control_points": [
+                {
+                    "x": 5336,
+                    "y": 9802
+                },
+                {
+                    "x": 5923,
+                    "y": 8716
+                }
+            ],
+            "fork_height_limit": {
+                "highest": 100000,
+                "lowest": -1
+            },
+            "full_collision": {
+                "back": 3,
+                "forward": 1,
+                "left": 5,
+                "right": 4,
+                "rotate": 2
+            },
+            "full_speed": 400,
+            "goods_dir": 0,
+            "name": "12",
+            "navigation_type": 1,
+            "obstacle_avoid_dis_threshold": 1000,
+            "obstacle_avoid_type": 0,
+            "omni_body_dir": 0,
+            "pallet_collision": [],
+            "path_dir": 0,
+            "path_length": 3223.864,
+            "remark": "",
+            "reposition_path": [],
+            "reposition_sites": [],
+            "sites": [
+                11,
+                12
+            ],
+            "speed": 400,
+            "type": 2
+        },
+        {
+            "allow_back": true,
+            "allow_close_fork_foot_photoelectric": false,
+            "allow_close_fork_foot_photoelectric_drop": false,
+            "allow_obstacle_avoid": false,
+            "body_dir": 2,
+            "code": 13,
+            "collision": {
+                "back": 3,
+                "forward": 1,
+                "left": 5,
+                "right": 4,
+                "rotate": 2
+            },
+            "curve_control_points": [],
+            "fork_height_limit": {
+                "highest": 100000,
+                "lowest": -1
+            },
+            "full_collision": {
+                "back": 3,
+                "forward": 1,
+                "left": 5,
+                "right": 4,
+                "rotate": 2
+            },
+            "full_speed": 400,
+            "goods_dir": 0,
+            "name": "13",
+            "navigation_type": 4,
+            "obstacle_avoid_dis_threshold": 1000,
+            "obstacle_avoid_type": 0,
+            "omni_body_dir": 0,
+            "pallet_collision": [],
+            "path_dir": 1,
+            "path_length": 999.99963,
+            "remark": "",
+            "reposition_path": [],
+            "reposition_sites": [],
+            "sites": [
+                13,
+                14
+            ],
+            "speed": 400,
+            "type": 1
+        },
+        {
+            "allow_back": true,
+            "allow_close_fork_foot_photoelectric": false,
+            "allow_close_fork_foot_photoelectric_drop": false,
+            "allow_obstacle_avoid": false,
+            "body_dir": 0,
+            "code": 14,
+            "collision": {
+                "back": 3,
+                "forward": 1,
+                "left": 5,
+                "right": 4,
+                "rotate": 2
+            },
+            "curve_control_points": [
+                {
+                    "x": 4733,
+                    "y": 4882
+                },
+                {
+                    "x": 6627,
+                    "y": 1112
+                }
+            ],
+            "fork_height_limit": {
+                "highest": 100000,
+                "lowest": -1
+            },
+            "full_collision": {
+                "back": 3,
+                "forward": 1,
+                "left": 5,
+                "right": 4,
+                "rotate": 2
+            },
+            "full_speed": 400,
+            "goods_dir": 0,
+            "name": "14",
+            "navigation_type": 1,
+            "obstacle_avoid_dis_threshold": 1000,
+            "obstacle_avoid_type": 0,
+            "omni_body_dir": 0,
+            "pallet_collision": [],
+            "path_dir": 0,
+            "path_length": 5015.443,
+            "remark": "",
+            "reposition_path": [],
+            "reposition_sites": [],
+            "sites": [
+                14,
+                3
+            ],
+            "speed": 400,
+            "type": 2
+        }
+    ],
+    "map_info": {
+        "camera": {
+            "camera_name": "",
+            "rotate_angle": 0.0,
+            "x": 225,
+            "y": 705,
+            "zoom": 0.20986833
+        },
+        "camera_list": [],
+        "height": 50,
+        "map_name": "test080926@test080926",
+        "name": "test080926",
+        "project_id": "test080926",
+        "site_size": {
+            "x": 1000,
+            "y": 1000
+        },
+        "site_zoom": 3.6211112,
+        "width": 50
+    },
+    "sites": [
+        {
+            "allow_avoid": false,
+            "allow_close_fork_foot_photoelectric": false,
+            "allow_close_fork_foot_photoelectric_drop": false,
+            "allow_sync": false,
+            "ban_dir": -1,
+            "code": 0,
+            "collision": 2,
+            "device_code": "",
+            "fork_rotate_flag": true,
+            "full_collision": 2,
+            "func_type": 0,
+            "height_limit": 0,
+            "local_site_use_type": -1,
+            "material": 0,
+            "name": "0",
+            "pallet_collision": [],
+            "point": {
+                "x": 7560,
+                "y": 1112
+            },
+            "remark": "",
+            "rotate_enable": false,
+            "rotation_speed": -1.0,
+            "stop_dir": -1.0,
+            "transmit_point": 0,
+            "type": 1
+        },
+        {
+            "allow_avoid": false,
+            "allow_close_fork_foot_photoelectric": false,
+            "allow_close_fork_foot_photoelectric_drop": false,
+            "allow_sync": false,
+            "ban_dir": -1,
+            "code": 1,
+            "collision": 2,
+            "device_code": "",
+            "fork_rotate_flag": true,
+            "full_collision": 2,
+            "func_type": 0,
+            "height_limit": 0,
+            "local_site_use_type": -1,
+            "material": 0,
+            "name": "1",
+            "pallet_collision": [],
+            "point": {
+                "x": 6560,
+                "y": 1112
+            },
+            "remark": "",
+            "rotate_enable": false,
+            "rotation_speed": -1.0,
+            "stop_dir": -1.0,
+            "transmit_point": 0,
+            "type": 1
+        },
+        {
+            "allow_avoid": false,
+            "allow_close_fork_foot_photoelectric": false,
+            "allow_close_fork_foot_photoelectric_drop": false,
+            "allow_sync": false,
+            "ban_dir": -1,
+            "code": 2,
+            "collision": 2,
+            "device_code": "",
+            "fork_rotate_flag": true,
+            "full_collision": 2,
+            "func_type": 0,
+            "height_limit": 0,
+            "local_site_use_type": -1,
+            "material": 0,
+            "name": "2",
+            "pallet_collision": [],
+            "point": {
+                "x": 5560,
+                "y": 1112
+            },
+            "remark": "",
+            "rotate_enable": false,
+            "rotation_speed": -1.0,
+            "stop_dir": -1.0,
+            "transmit_point": 0,
+            "type": 1
+        },
+        {
+            "allow_avoid": false,
+            "allow_close_fork_foot_photoelectric": false,
+            "allow_close_fork_foot_photoelectric_drop": false,
+            "allow_sync": false,
+            "ban_dir": -1,
+            "code": 3,
+            "collision": 2,
+            "device_code": "",
+            "fork_rotate_flag": true,
+            "full_collision": 2,
+            "func_type": 0,
+            "height_limit": 0,
+            "local_site_use_type": -1,
+            "material": 0,
+            "name": "3",
+            "pallet_collision": [],
+            "point": {
+                "x": 4560,
+                "y": 1112
+            },
+            "remark": "",
+            "rotate_enable": false,
+            "rotation_speed": -1.0,
+            "stop_dir": -1.0,
+            "transmit_point": 0,
+            "type": 1
+        },
+        {
+            "allow_avoid": false,
+            "allow_close_fork_foot_photoelectric": false,
+            "allow_close_fork_foot_photoelectric_drop": false,
+            "allow_sync": false,
+            "ban_dir": -1,
+            "code": 8,
+            "collision": 2,
+            "device_code": "",
+            "fork_rotate_flag": true,
+            "full_collision": 2,
+            "func_type": 0,
+            "height_limit": 0,
+            "local_site_use_type": -1,
+            "material": 0,
+            "name": "8",
+            "pallet_collision": [],
+            "point": {
+                "x": 1988,
+                "y": 2564
+            },
+            "remark": "",
+            "rotate_enable": false,
+            "rotation_speed": -1.0,
+            "stop_dir": -1.0,
+            "transmit_point": 0,
+            "type": 1
+        },
+        {
+            "allow_avoid": false,
+            "allow_close_fork_foot_photoelectric": false,
+            "allow_close_fork_foot_photoelectric_drop": false,
+            "allow_sync": false,
+            "ban_dir": -1,
+            "code": 9,
+            "collision": 2,
+            "device_code": "",
+            "fork_rotate_flag": true,
+            "full_collision": 2,
+            "func_type": 0,
+            "height_limit": 0,
+            "local_site_use_type": -1,
+            "material": 0,
+            "name": "9",
+            "pallet_collision": [],
+            "point": {
+                "x": 2032,
+                "y": 5763
+            },
+            "remark": "",
+            "rotate_enable": false,
+            "rotation_speed": -1.0,
+            "stop_dir": -1.0,
+            "transmit_point": 0,
+            "type": 1
+        },
+        {
+            "allow_avoid": false,
+            "allow_close_fork_foot_photoelectric": false,
+            "allow_close_fork_foot_photoelectric_drop": false,
+            "allow_sync": false,
+            "ban_dir": -1,
+            "code": 10,
+            "collision": 2,
+            "device_code": "",
+            "fork_rotate_flag": true,
+            "full_collision": 2,
+            "func_type": 0,
+            "height_limit": 0,
+            "local_site_use_type": -1,
+            "material": 0,
+            "name": "10",
+            "pallet_collision": [],
+            "point": {
+                "x": 2021,
+                "y": 7960
+            },
+            "remark": "",
+            "rotate_enable": false,
+            "rotation_speed": -1.0,
+            "stop_dir": -1.0,
+            "transmit_point": 0,
+            "type": 1
+        },
+        {
+            "allow_avoid": false,
+            "allow_close_fork_foot_photoelectric": false,
+            "allow_close_fork_foot_photoelectric_drop": false,
+            "allow_sync": false,
+            "ban_dir": -1,
+            "code": 11,
+            "collision": 2,
+            "device_code": "",
+            "fork_rotate_flag": true,
+            "full_collision": 2,
+            "func_type": 0,
+            "height_limit": 0,
+            "local_site_use_type": -1,
+            "material": 0,
+            "name": "11",
+            "pallet_collision": [],
+            "point": {
+                "x": 3887,
+                "y": 9780
+            },
+            "remark": "",
+            "rotate_enable": false,
+            "rotation_speed": -1.0,
+            "stop_dir": -1.0,
+            "transmit_point": 0,
+            "type": 1
+        },
+        {
+            "allow_avoid": false,
+            "allow_close_fork_foot_photoelectric": false,
+            "allow_close_fork_foot_photoelectric_drop": false,
+            "allow_sync": false,
+            "ban_dir": -1,
+            "code": 12,
+            "collision": 2,
+            "device_code": "",
+            "fork_rotate_flag": true,
+            "full_collision": 2,
+            "func_type": 0,
+            "height_limit": 0,
+            "local_site_use_type": -1,
+            "material": 0,
+            "name": "12",
+            "pallet_collision": [],
+            "point": {
+                "x": 5903,
+                "y": 7764
+            },
+            "remark": "",
+            "rotate_enable": false,
+            "rotation_speed": -1.0,
+            "stop_dir": -1.0,
+            "transmit_point": 0,
+            "type": 1
+        },
+        {
+            "allow_avoid": false,
+            "allow_close_fork_foot_photoelectric": false,
+            "allow_close_fork_foot_photoelectric_drop": false,
+            "allow_sync": false,
+            "ban_dir": -1,
+            "code": 13,
+            "collision": 2,
+            "device_code": "",
+            "fork_rotate_flag": true,
+            "full_collision": 2,
+            "func_type": 0,
+            "height_limit": 0,
+            "local_site_use_type": -1,
+            "material": 0,
+            "name": "13",
+            "pallet_collision": [],
+            "point": {
+                "x": 5841,
+                "y": 4882
+            },
+            "remark": "",
+            "rotate_enable": false,
+            "rotation_speed": -1.0,
+            "stop_dir": -1.0,
+            "transmit_point": 0,
+            "type": 1
+        },
+        {
+            "allow_avoid": false,
+            "allow_close_fork_foot_photoelectric": false,
+            "allow_close_fork_foot_photoelectric_drop": false,
+            "allow_sync": false,
+            "ban_dir": -1,
+            "code": 14,
+            "collision": 2,
+            "device_code": "",
+            "fork_rotate_flag": true,
+            "full_collision": 2,
+            "func_type": 0,
+            "height_limit": 0,
+            "local_site_use_type": -1,
+            "material": 0,
+            "name": "14",
+            "pallet_collision": [],
+            "point": {
+                "x": 6841,
+                "y": 4882
+            },
+            "remark": "",
+            "rotate_enable": false,
+            "rotation_speed": -1.0,
+            "stop_dir": -1.0,
+            "transmit_point": 0,
+            "type": 1
+        }
+    ]
+}

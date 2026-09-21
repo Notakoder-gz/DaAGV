@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<robot name="igv_robot">
+    <link name="base_link"/>
+    <link name="base_footprint"/>
+    <link name="laser_scanner_link"/>
+    <link name="laser_scanner_link_head"/>
+    <link name="laser_scanner_link_head_avoid"/>
+    <link name="laser_scanner_link_rear_avoid"/>
+    <link name="gyro_link"/>
+    <link name="gnss_link"/>
+    <link name="ifm3d/camera_link"/>
+    <joint name="base_footprint_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <child link="base_link"/>
+        <parent link="base_footprint"/>
+    </joint>
+    <joint name="laser_scanner_joint" type="fixed">
+        <origin xyz="0.0 0.0 0" rpy="0 0 0.000000"/>
+        <child link="laser_scanner_link"/>
+        <parent link="base_link"/>
+    </joint>
+    <joint name="laser_scanner_joint_head" type="fixed">
+        <origin xyz="1.050000 0.000000 0.000000" rpy="0.000000 0.000000 -0.060000"/>
+        <child link="laser_scanner_link_head"/>
+        <parent link="base_link"/>
+    </joint>
+    <joint name="laser_scanner_link_head_avoid_joint" type="fixed">
+        <origin xyz="1.050000 0.000000 0.000000" rpy="0.000000 0.000000 -0.060000"/>
+        <child link="laser_scanner_link_head_avoid"/>
+        <parent link="base_link"/>
+    </joint>
+    <joint name="laser_scanner_link_rear_avoid_joint" type="fixed">
+        <origin xyz="-0.230000 0.155000 0.000000" rpy="0.000000 0.000000 2.356194"/>
+        <child link="laser_scanner_link_rear_avoid"/>
+        <parent link="base_link"/>
+    </joint>
+    <joint name="gyro_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <child link="gyro_link"/>
+        <parent link="base_link"/>
+    </joint>
+    <joint name="gnss_joint" type="fixed">
+        <origin xyz="0.000000 0.000000 0" rpy="0 0 0.000000"/>
+        <child link="gnss_link"/>
+        <parent link="base_link"/>
+    </joint>
+    <joint name="camera_link_joint" type="fixed">
+        <origin xyz="0.920000 0.000000 0" rpy="0 0 3.141592"/>
+        <child link="ifm3d/camera_link"/>
+        <parent link="base_link"/>
+    </joint>
+</robot>

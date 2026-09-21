@@ -1,0 +1,5200 @@
+{
+    "status_list": [
+        {
+            "status_description": "货叉上升",
+            "level": 1,
+            "voice_index": 6,
+            "light_index": 1,
+            "expand": false
+        },
+        {
+            "status_description": "货叉下降",
+            "level": 1,
+            "voice_index": 7,
+            "light_index": 1,
+            "expand": false
+        },
+        {
+            "status_description": "顶升上升",
+            "level": 1,
+            "voice_index": 39,
+            "light_index": 1,
+            "expand": false
+        },
+        {
+            "status_description": "顶升下降",
+            "level": 1,
+            "voice_index": 40,
+            "light_index": 1,
+            "expand": false
+        },
+        {
+            "status_description": "前进",
+            "level": 2,
+            "voice_index": 1,
+            "light_index": 1,
+            "expand": false
+        },
+        {
+            "status_description": "后退",
+            "level": 2,
+            "voice_index": 1,
+            "light_index": 1,
+            "expand": false
+        },
+        {
+            "status_description": "左转",
+            "level": 2,
+            "voice_index": 5,
+            "light_index": 1,
+            "expand": false
+        },
+        {
+            "status_description": "右转",
+            "level": 2,
+            "voice_index": 4,
+            "light_index": 1,
+            "expand": false
+        },
+        {
+            "status_description": "低电量",
+            "level": 3,
+            "voice_index": 32,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "status_description": "人工任务音乐",
+            "level": 3,
+            "voice_index": 151,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "status_description": "二次定位中",
+            "level": 4,
+            "voice_index": 31,
+            "light_index": 1,
+            "expand": false
+        },
+        {
+            "status_description": "AGV上线",
+            "level": 5,
+            "voice_index": 16,
+            "light_index": 1,
+            "expand": false
+        },
+        {
+            "status_description": "启用调度,AGV连接调度失败",
+            "level": 6,
+            "voice_index": 16,
+            "light_index": 1,
+            "expand": false
+        },
+        {
+            "status_description": "触发1级避障",
+            "level": 6,
+            "voice_index": 0,
+            "light_index": 2,
+            "expand": false
+        },
+        {
+            "status_description": "触发2级避障",
+            "level": 6,
+            "voice_index": 0,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "status_description": "调度离线",
+            "level": 7,
+            "voice_index": 17,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "status_description": "触发3级避障",
+            "level": 7,
+            "voice_index": 3,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "status_description": "AGV不在点位",
+            "level": 7,
+            "voice_index": 9,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "status_description": "触发叉脚光电",
+            "level": 7,
+            "voice_index": 72,
+            "light_index": 12,
+            "expand": true
+        },
+        {
+            "status_description": "触发触边开关",
+            "level": 8,
+            "voice_index": 19,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "status_description": "触发急停",
+            "level": 9,
+            "voice_index": 37,
+            "light_index": 12,
+            "expand": false
+        }
+    ],
+    "error_list": [
+        {
+            "error_description": "imu断开连接",
+            "error_code": "4a",
+            "voice_index": 41,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "slam定位丢失",
+            "error_code": "52",
+            "voice_index": 42,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "里程角度发生漂移",
+            "error_code": "40052",
+            "voice_index": 43,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "r2000断开连接",
+            "error_code": "8a",
+            "voice_index": 44,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "本地默认交通图不存在",
+            "error_code": "96",
+            "voice_index": 45,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "定位模块断开连接",
+            "error_code": "106",
+            "voice_index": 38,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "控制节点加载地图失败",
+            "error_code": "10e",
+            "voice_index": 47,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "货叉超出车身安全范围",
+            "error_code": "14e",
+            "voice_index": 49,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "目标和当前id不一致",
+            "error_code": "18e",
+            "voice_index": 50,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "未收到odom数据",
+            "error_code": "10052",
+            "voice_index": 51,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "货叉类型与本地不一致",
+            "error_code": "10056",
+            "voice_index": 52,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "参数文件有误",
+            "error_code": "10096",
+            "voice_index": 53,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "程序异常",
+            "error_code": "10106",
+            "voice_index": 54,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "控制节点无法定位",
+            "error_code": "1010e",
+            "voice_index": 55,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "任务参数是错误的",
+            "error_code": "1014e",
+            "voice_index": 57,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "货叉无法到位",
+            "error_code": "1018e",
+            "voice_index": 58,
+            "light_index": 12,
+            "expand": false
+        },
+		{
+            "error_description": "imu数据异常",
+            "error_code": "2004a",
+            "voice_index": 41,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "反光板定位丢失",
+            "error_code": "20052",
+            "voice_index": 59,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "rms任务错误",
+            "error_code": "20055",
+            "voice_index": 60,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "规划路径失败",
+            "error_code": "2010e",
+            "voice_index": 61,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "交通图为空",
+            "error_code": "3010e",
+            "voice_index": 65,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "无法找到机器人",
+            "error_code": "40055",
+            "voice_index": 67,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "导航模式切换超时",
+            "error_code": "4010e",
+            "voice_index": 68,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "无法拼接路径",
+            "error_code": "5010e",
+            "voice_index": 71,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "触发叉脚光电",
+            "error_code": "50149",
+            "voice_index": 72,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "无法计算前瞻点",
+            "error_code": "6010e",
+            "voice_index": 74,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "偏离路径",
+            "error_code": "7010e",
+            "voice_index": 28,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "冲过目标点",
+            "error_code": "8010e",
+            "voice_index": 80,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "触发摇臂开关",
+            "error_code": "9010e",
+            "voice_index": 69,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "电池通信断开",
+            "error_code": "9014a",
+            "voice_index": 83,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "无法到达目标点",
+            "error_code": "a010e",
+            "voice_index": 85,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "安全控制板通信断开",
+            "error_code": "a014a",
+            "voice_index": 86,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "无法找到站点ID",
+            "error_code": "b010e",
+            "voice_index": 87,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "拉线编码器通信断开",
+            "error_code": "b014a",
+            "voice_index": 88,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "未找到路径点",
+            "error_code": "c010e",
+            "voice_index": 90,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "1501端口断开",
+            "error_code": "c014a",
+            "voice_index": 91,
+            "light_index": 1,
+            "expand": false
+        },
+        {
+            "error_description": "地图内未找到站点",
+            "error_code": "d010e",
+            "voice_index": 93,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机驱动通信断开",
+            "error_code": "d014a",
+            "voice_index": 94,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "调度工程与本地不一致",
+            "error_code": "e0056",
+            "voice_index": 95,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机驱动通信断开",
+            "error_code": "e014a",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "路径方向错误",
+            "error_code": "f010e",
+            "voice_index": 97,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "泵电机驱动通信断开",
+            "error_code": "f014a",
+            "voice_index": 98,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "本地或调度缺少交通图",
+            "error_code": "100056",
+            "voice_index": 99,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "检测到相同站点id",
+            "error_code": "10010e",
+            "voice_index": 100,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走左电机驱动断开",
+            "error_code": "10014a",
+            "voice_index": 101,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "检测到相同线id",
+            "error_code": "11010e",
+            "voice_index": 102,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走右电机驱动断开",
+            "error_code": "11014a",
+            "voice_index": 103,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "检测到同地图弧线id",
+            "error_code": "12010e",
+            "voice_index": 104,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "顶升电机驱动通信断开",
+            "error_code": "12014a",
+            "voice_index": 105,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "二维码破损无法扫码",
+            "error_code": "13010e",
+            "voice_index": 106,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "旋转电机驱动通信断开",
+            "error_code": "13014a",
+            "voice_index": 107,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "栈板偏离目标点",
+            "error_code": "14010d",
+            "voice_index": 12,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "上位机行走指令超时",
+            "error_code": "14014a",
+            "voice_index": 109,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "栈板识别失败",
+            "error_code": "15010d",
+            "voice_index": 13,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "加速器操作顺序故障",
+            "error_code": "15014a",
+            "voice_index": 111,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "货叉超限",
+            "error_code": "16010e",
+            "voice_index": 112,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机泵控报文超时",
+            "error_code": "16014a",
+            "voice_index": 113,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "当前任务路径类型错误",
+            "error_code": "17010e",
+            "voice_index": 114,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "油泵控制器握手故障",
+            "error_code": "17014a",
+            "voice_index": 115,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "距离上线点太远",
+            "error_code": "18010e",
+            "voice_index": 9,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机中断行走",
+            "error_code": "18014a",
+            "voice_index": 117,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "二次定位识别停车超时",
+            "error_code": "19010e",
+            "voice_index": 118,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机限制行走",
+            "error_code": "19014a",
+            "voice_index": 119,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机PD0超时",
+            "error_code": "1a014a",
+            "voice_index": 120,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "开机油泵操作顺序故障",
+            "error_code": "1b014a",
+            "voice_index": 121,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走控制器PD0超时",
+            "error_code": "1c014a",
+            "voice_index": 122,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "上位机油泵指令超时",
+            "error_code": "1d014a",
+            "voice_index": 123,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动器扩展错误",
+            "error_code": "1e014a",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "编码器ABZ未连接",
+            "error_code": "1f014a",
+            "voice_index": 125,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "二次定位识别超时",
+            "error_code": "20010e",
+            "voice_index": 33,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "编码器UVW",
+            "error_code": "20014a",
+            "voice_index": 127,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "运动模型不具导航方式",
+            "error_code": "21010e",
+            "voice_index": 156,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "编码器计数",
+            "error_code": "21014a",
+            "voice_index": 128,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动器温度",
+            "error_code": "22014a",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动器过压",
+            "error_code": "23014a",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动器低压",
+            "error_code": "24014a",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动器过流",
+            "error_code": "25014a",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动器吸收电阻",
+            "error_code": "26014a",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动器跟随误差",
+            "error_code": "27014a",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动器逻辑低压",
+            "error_code": "28014a",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动或电机iit",
+            "error_code": "29014a",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动脉冲频率过高",
+            "error_code": "2a014a",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动器电机温度",
+            "error_code": "2b014a",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动电机励磁报警",
+            "error_code": "2c014a",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动EEPROM",
+            "error_code": "2d014a",
+            "voice_index": 140,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走左驱动故障",
+            "error_code": "2e014a",
+            "voice_index": 141,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走右驱动故障",
+            "error_code": "2f014a",
+            "voice_index": 142,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "旋转驱动故障",
+            "error_code": "30014a",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "顶升驱动故障",
+            "error_code": "31014a",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动故障",
+            "error_code": "32014a",
+            "voice_index": 146,
+            "light_index": 144,
+            "expand": false
+        },
+        {
+            "error_description": "二次定位js解析失败",
+            "error_code": "33010e",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动故障",
+            "error_code": "33014a",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "二次定位无法找到目标",
+            "error_code": "340103",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "泵驱动故障",
+            "error_code": "34014a",
+            "voice_index": 113,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "二次定位获取数据超时",
+            "error_code": "35010e",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "无法获取二维码偏移",
+            "error_code": "36010e",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "无法获取二维码索引号",
+            "error_code": "37010e",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "二次定位参数设置错误",
+            "error_code": "38010e",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "无法获取odom的tf",
+            "error_code": "39010e",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "无法获取目标点配置",
+            "error_code": "3a010e",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "目标终点偏移",
+            "error_code": "3b010e",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "二次定位参数设置错误",
+            "error_code": "38010e",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "识别模式错误",
+            "error_code": "3c010e",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "二次定位参数错误",
+            "error_code": "3d010e",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "货架识别服务不存在",
+            "error_code": "3e010e",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "推杆故障",
+            "error_code": "37014a",
+            "voice_index": 161,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "取货失败",
+            "error_code": "38014a",
+            "voice_index": 159,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "卸货失败",
+            "error_code": "39014a",
+            "voice_index": 160,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机已经卸使能",
+            "error_code": "3b0149",
+            "voice_index": 165,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "顶升回零失败",
+            "error_code": "3c014a",
+            "voice_index": 168,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转回零失败",
+            "error_code": "3d014a",
+            "voice_index": 169,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "角度恢复",
+            "error_code": "40010d",
+            "voice_index": 164,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "高度恢复",
+            "error_code": "41010d",
+            "voice_index": 163,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "机器人状态错误",
+            "error_code": "70055",
+            "voice_index": 9,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "rms无法找到地图",
+            "error_code": "80055",
+            "voice_index": 9,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "电池通信断开",
+            "error_code": "90149",
+            "voice_index": 83,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "当前点被锁定",
+            "error_code": "c0055",
+            "voice_index": 9,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "当前点被锁定",
+            "error_code": "d0055",
+            "voice_index": 9,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "特殊点位禁止上线",
+            "error_code": "110055",
+            "voice_index": 9,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "自动上线失败",
+            "error_code": "30055",
+            "voice_index": 9,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "超声波断开链接",
+            "error_code": "10049",
+            "voice_index": 162,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "地图或地图节点不存在",
+            "error_code": "150055",
+            "voice_index": 170,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "地图MapName不匹配",
+            "error_code": "160055",
+            "voice_index": 170,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "电梯跨楼层地图没有找到",
+            "error_code": "2a0055",
+            "voice_index": 171,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "rms任务不存在",
+            "error_code": "1c0055",
+            "voice_index": 172,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "操作机器人失败",
+            "error_code": "240055",
+            "voice_index": 173,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "充电桩不存在",
+            "error_code": "210055",
+            "voice_index": 174,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "路径不匹配",
+            "error_code": "250055",
+            "voice_index": 175,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "执行http请求错误 ",
+            "error_code": "270055",
+            "voice_index": 176,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "小车未到达目标点",
+            "error_code": "1e0055",
+            "voice_index": 177,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "数据库操作错误",
+            "error_code": "1f0055",
+            "voice_index": 178,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "任务超时",
+            "error_code": "200055",
+            "voice_index": 179,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "地图与点位和状态信息不匹配",
+            "error_code": "220055",
+            "voice_index": 180,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "小车坐标和状态信息坐标不匹配",
+            "error_code": "230055",
+            "voice_index": 181,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "设备被占用",
+            "error_code": "290055",
+            "voice_index": 182,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "设备未使能",
+            "error_code": "280055",
+            "voice_index": 183,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "设备状态不存在",
+            "error_code": "1d0055",
+            "voice_index": 184,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "机器人在禁行区",
+            "error_code": "1b0055",
+            "voice_index": 185,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "释放切换点失败",
+            "error_code": "1a0055",
+            "voice_index": 186,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "释放电梯失败",
+            "error_code": "190055",
+            "voice_index": 187,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "解锁电梯失败",
+            "error_code": "180055",
+            "voice_index": 188,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "地图节点不存在",
+            "error_code": "170055",
+            "voice_index": 189,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "机器人位置没有更新",
+            "error_code": "140055",
+            "voice_index": 9,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "机器人不存在",
+            "error_code": "260055",
+            "voice_index": 190,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "切换点物理位置不匹配",
+            "error_code": "50052",
+            "voice_index": 191,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "机械臂正在错误中",
+            "error_code": "42010e",
+            "voice_index": 192,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "无法与机械臂通信",
+            "error_code": "43010e",
+            "voice_index": 193,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "机械臂不在安全点",
+            "error_code": "44010e",
+            "voice_index": 194,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "机械臂任务错误",
+            "error_code": "45010e",
+            "voice_index": 195,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "机械臂任务执行失败",
+            "error_code": "46010e",
+            "voice_index": 192,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "机械臂状态错误",
+            "error_code": "47010e",
+            "voice_index": 197,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "机械臂品牌不支持",
+            "error_code": "48010e",
+            "voice_index": 198,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "传送带驱动故障",
+            "error_code": "36014a",
+            "voice_index": 147,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "传送带故障",
+            "error_code": "3a014a",
+            "voice_index": 147,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "机器人硬件或通信错误",
+            "error_code": "1a010e",
+            "voice_index": 199,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "传感器数据超出正常范围",
+            "error_code": "1b010e",
+            "voice_index": 200,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "机器人运行参数错误",
+            "error_code": "1c010e",
+            "voice_index": 201,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "机器人处于遥控器激活状态",
+            "error_code": "1d010d",
+            "voice_index": 202,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "二次定位无法找到目标",
+            "error_code": "34010e",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "二次定位货架服务不存在",
+            "error_code": "2e010d",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "二次定位参数错误",
+            "error_code": "2d010d",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "二次定位模式错误",
+            "error_code": "2c010d",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "二次定位获取的目标终点太偏",
+            "error_code": "2b010d",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "二次定位无法获取目标点配置",
+            "error_code": "2a010d",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "二次定位无法获取tfchinese solution",
+            "error_code": "29010d",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "二次定位点类型有误",
+            "error_code": "28010d",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "无法获取二维码索引号",
+            "error_code": "27010d",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "无法获取二维码安装偏移",
+            "error_code": "26010d",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "二次定位无法获取雷达配置",
+            "error_code": "25010d",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "二次定位无法找到目标",
+            "error_code": "24010d",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "二次定位json解析失败",
+            "error_code": "23010d",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "偏离二次定位路径起点",
+            "error_code": "22010e",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "二次定位目标终点偏离路线太远",
+            "error_code": "1f010e",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "二次定位目标终点偏离路线太远",
+            "error_code": "1e010d",
+            "voice_index": 126,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "小车上线地图错误",
+            "error_code": "130055",
+            "voice_index": 9,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "无法找到合适的路径",
+            "error_code": "a0055",
+            "voice_index": 84,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "无法找到合适的路径",
+            "error_code": "b0055",
+            "voice_index": 84,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "机器人偏离线太远无法自动上线",
+            "error_code": "60055",
+            "voice_index": 73,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "禁用该机器人",
+            "error_code": "50055",
+            "voice_index": 70,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "摇臂开关触发",
+            "error_code": "40149",
+            "voice_index": 69,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "夹爪断开连接，请检查线路",
+            "error_code": "4a010e",
+            "voice_index": 220,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "机械臂配置模式激活",
+            "error_code": "49010e",
+            "voice_index": 203,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "机械臂正在初始化",
+            "error_code": "4b010d",
+            "voice_index": 204,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "机械臂正在执行任务，请注意安全",
+            "error_code": "4c010d",
+            "voice_index": 205,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "栈板识别相机服务未启动",
+            "error_code": "51010d",
+            "voice_index": 206,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "视觉校验误差很大",
+            "error_code": "52010e",
+            "voice_index": 207,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "视觉校验失败",
+            "error_code": "53010d",
+            "voice_index": 207,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "相机打开异常",
+            "error_code": "57010d",
+            "voice_index": 208,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "检测失败",
+            "error_code": "58010d",
+            "voice_index": 209,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "相机内部异常",
+            "error_code": "59010d",
+            "voice_index": 208,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "算法内部异常",
+            "error_code": "60010d",
+            "voice_index": 208,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "超时",
+            "error_code": "61010d",
+            "voice_index": 209,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "上笼未检测到",
+            "error_code": "62010d",
+            "voice_index": 209,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "下笼未检测到",
+            "error_code": "63010d",
+            "voice_index": 209,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "滚轴未检测到",
+            "error_code": "64010d",
+            "voice_index": 209,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "点位禁止旋转",
+            "error_code": "60010e",
+            "voice_index": 210,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "旋转问题",
+            "error_code": "65010d",
+            "voice_index": 210,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "避障相机掉线",
+            "error_code": "67010e",
+            "voice_index": 211,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "栈板识别相机断开",
+            "error_code": "68010e",
+            "voice_index": 212,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "等待第三方允许信号",
+            "error_code": "2d0055",
+            "voice_index": 213,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "等待第三方允许信号超时",
+            "error_code": "2e0056",
+            "voice_index": 214,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "车已到达，请人工处理",
+            "error_code": "2b0055",
+            "voice_index": 215,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "车已到达，人工处理超时",
+            "error_code": "2c0056",
+            "voice_index": 216,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "热点已开启",
+            "error_code": "55010d",
+            "voice_index": 38,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "即将打开热点",
+            "error_code": "54010d",
+            "voice_index": 38,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "即将重置热点",
+            "error_code": "56010d",
+            "voice_index": 38,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "机械臂未能查到安全点，请确认点位设置是否成功",
+            "error_code": "4d010e",
+            "voice_index": 217,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "动作码对应机械臂任务不存在",
+            "error_code": "4e010d",
+            "voice_index": 218,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": " AGV检测到货物",
+            "error_code": "300056",
+            "voice_index": 219,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": " 机器人行驶请注意避让",
+            "error_code": "20095",
+            "voice_index": 221,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": " 目标层级不存在请检查!",
+            "error_code": "2014e",
+            "voice_index": 222,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": " 无效错误码",
+            "error_code": "30095",
+            "voice_index": 223,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": " 等待原点恢复",
+            "error_code": "3014d",
+            "voice_index": 224,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "防区切换失败",
+            "error_code": "6e010e",
+            "voice_index": 225,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": " 顶升原点恢复超时",
+            "error_code": "4014e",
+            "voice_index": 226,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": " AGV开始放货请人员尽快离开",
+            "error_code": "40095",
+            "voice_index": 108,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "相机切换模式失败",
+            "error_code": "6b010d",
+            "voice_index": 227,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": " 旋转原点恢复超时",
+            "error_code": "5014e",
+            "voice_index": 228,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": " 车辆行驶中请注意避让",
+            "error_code": "60095",
+            "voice_index": 221,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": " 喷涂凿毛切割作业已就绪",
+            "error_code": "70095",
+            "voice_index": 230,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": " 喷涂凿毛切割作业已开始",
+            "error_code": "80095",
+            "voice_index": 231,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": " 喷涂凿毛切割作业已暂停",
+            "error_code": "90095",
+            "voice_index": 232,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": " 喷涂凿毛切割作业已完成",
+            "error_code": "a0095",
+            "voice_index": 233,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": " 请勿占用电梯",
+            "error_code": "b0095",
+            "voice_index": 234,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "AGV未检测到货物",
+            "error_code": "310055",
+            "voice_index": 196,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "货物不在AGV上",
+            "error_code": "6a010d",
+            "voice_index": 235,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "机械臂地图点位查询失败",
+            "error_code": "4f010e",
+            "voice_index": 236,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "二维码导航禁止智能上线",
+            "error_code": "69010e",
+            "voice_index": 237,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "等待启动信号",
+            "error_code": "6014d",
+            "voice_index": 238,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "停止信号触发",
+            "error_code": "7014d",
+            "voice_index": 239,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "滚筒到位光电未触发",
+            "error_code": "4018e",
+            "voice_index": 240,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": " 相机视野内无目标物",
+            "error_code": "81010e",
+            "voice_index": 241,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": " 目标物轮廓在相机视野内不完全显示",
+            "error_code": "82010e",
+            "voice_index": 242,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "相机未识别到目标物，请检查",
+            "error_code": "83010e",
+            "voice_index": 243,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "相机识别类型与目标物不符",
+            "error_code": "84010e",
+            "voice_index": 244,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "机械臂光电错误，请检查",
+            "error_code": "85010e",
+            "voice_index": 245,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": " 急停安全模块故障",
+            "error_code": "49014a",
+            "voice_index": 70,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": " 触边安全模块故障",
+            "error_code": "4a014a",
+            "voice_index": 79,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "速度监控安全模块故障",
+            "error_code": "4b014a",
+            "voice_index": 251,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "电机STO安全模块故障",
+            "error_code": "4c014a",
+            "voice_index": 249,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "机器人速度保护触发",
+            "error_code": "4d014a",
+            "voice_index": 67,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "前安全激光保护触发",
+            "error_code": "4e0149",
+            "voice_index": 251,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "后安全激光保护触发",
+            "error_code": "4f0149",
+            "voice_index": 252,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "避障激光断开",
+            "error_code": "71010e",
+            "voice_index": 253,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "下位机断开链接",
+            "error_code": "20149",
+            "voice_index": 62,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "上升动作超时",
+            "error_code": "3e014a",
+            "voice_index": 22,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "下降动作超时",
+            "error_code": "3f014a",
+            "voice_index": 23,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转动作超时",
+            "error_code": "40014a",
+            "voice_index": 24,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "RFID断开连接",
+            "error_code": "6d010e",
+            "voice_index": 223,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "原始激光点数太少",
+            "error_code": "20089",
+            "voice_index": 8,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "原始激光点数几乎没有",
+            "error_code": "30089",
+            "voice_index": 8,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "滤波后激光点数几乎没有",
+            "error_code": "40089",
+            "voice_index": 8,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展I/O输入状态获取失败",
+            "error_code": "43014a",
+            "voice_index": 26,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展I/O输出状态获取失败",
+            "error_code": "44014a",
+            "voice_index": 27,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "栈板识别相机断开",
+            "error_code": "68010d",
+            "voice_index": 14,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "二维码相机断开连接",
+            "error_code": "41014a",
+            "voice_index": 14,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "机械臂相机断开连接，请检查",
+            "error_code": "86010d",
+            "voice_index": 14,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "机械臂夹爪未能到达指定位置，请检查",
+            "error_code": "87010e",
+            "voice_index": 25,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "该防区不存在，请检查",
+            "error_code": "72010e",
+            "voice_index": 20,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "编码器ABZ错误/编码器未连接",
+            "error_code": "89010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "编码器UVW错误/编码器内部错误",
+            "error_code": "8a010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "编码器计数错误/编码器CRC错误",
+            "error_code": "8b010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "驱动器温度过高",
+            "error_code": "8d010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "驱动器总线过压过高",
+            "error_code": "8e010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "驱动器总线过压过低",
+            "error_code": "8f010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "驱动器输出短路",
+            "error_code": "90010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "驱动器制动电阻异常",
+            "error_code": "91010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "实际跟随误差超过允许",
+            "error_code": "92010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "驱动器逻辑电压过低",
+            "error_code": "93010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "电机或驱动器IIT错误",
+            "error_code": "94010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "驱动器输入脉冲频率过高",
+            "error_code": "95010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "电机温度过高",
+            "error_code": "96010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "电机励磁报警/编码器通讯错误",
+            "error_code": "97010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "EEPROM数据错误",
+            "error_code": "98010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "电流传感器故障",
+            "error_code": "99010e",
+            "voice_index": 11	,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "驱动器看门狗报错",
+            "error_code": "9a010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "驱动器异常中断",
+            "error_code": "9b010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "驱动器MCU故障",
+            "error_code": "9c010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "电机配置错误",
+            "error_code": "9d010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "驱动器逻辑输出错误",
+            "error_code": "9e010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "驱动器STO1错误",
+            "error_code": "9f010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "驱动器STO2错误",
+            "error_code": "a0010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "预使能报警",
+            "error_code": "a1010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "驱动器正限位报错",
+            "error_code": "a2010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "驱动器负限位报错",
+            "error_code": "a3010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SPI内部故障",
+            "error_code": "a4010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "驱动器CAN总线中断",
+            "error_code": "a5010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "全闭环方向故障",
+            "error_code": "a6010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "主编码器ABZ错误",
+            "error_code": "a7010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "主编码器计数错误",
+            "error_code": "a8010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO切换位不交替",
+            "error_code": "a9010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO协议超时",
+            "error_code": "aa010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO非法或未知的Client/Server命令字",
+            "error_code": "ab010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO无效的块大小",
+            "error_code": "ac010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO无效的序号",
+            "error_code": "ad010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDOCRC错误",
+            "error_code": "ae010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO内存溢出",
+            "error_code": "af010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO对象不支持访问",
+            "error_code": "b0010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO试图读只写对象",
+            "error_code": "b1010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO试图写只读对象",
+            "error_code": "b2010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO对象字典中对象不存在",
+            "error_code": "b3010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO对象不能够映射到PDO",
+            "error_code": "b4010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO映射对象的数目和长度超出PDO长度",
+            "error_code": "b5010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO一般性参数不兼容",
+            "error_code": "b6010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO一般性设备内部不兼容",
+            "error_code": "b7010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO硬件错误导致对象访问失败",
+            "error_code": "b8010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO数据类型不匹配，服务参数长度不匹配",
+            "error_code": "b9010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO数据类型不匹配，服务参数长度太大",
+            "error_code": "ba010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO数据类型不匹配，服务参数长度太短",
+            "error_code": "bb010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO子索引不存在",
+            "error_code": "bc010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO超出参数的值范围（写访问时）",
+            "error_code": "bd010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO写入参数数值太大",
+            "error_code": "be010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO写入参数值太小",
+            "error_code": "bf010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO最大值小于最小值",
+            "error_code": "c0010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO一般性错误",
+            "error_code": "c1010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO数据不能传送或保存在应用",
+            "error_code": "c2010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO由于本地控制导致数据不能传送或保存到应用",
+            "error_code": "c3010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO由于当前设备状态导致数据不能传送或保存到应用",
+            "error_code": "c4010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SDO对象字典动态产生错误或对象字典不存在",
+            "error_code": "c5010d",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "LanX相机数据流断开",
+            "error_code": "c6010e",
+            "voice_index": 18,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机控制器电流过载",
+            "error_code": "c7010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机电流传感器故障",
+            "error_code": "c8010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机预充电失败",
+            "error_code": "c9010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机控制器温度过低",
+            "error_code": "ca010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机控制器温度过高",
+            "error_code": "cb010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机电压过低",
+            "error_code": "cc010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机电压过高",
+            "error_code": "cd010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机控制器温度过低，导致性能缩减",
+            "error_code": "ce010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机控制器温度过高，导致性能缩减",
+            "error_code": "cf010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机电压过低，性能缩减",
+            "error_code": "d0010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机电压过高，性能缩减",
+            "error_code": "d1010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机控制器输出5V电源失效",
+            "error_code": "d2010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机驱动6输出过流",
+            "error_code": "d3010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机驱动6输出过流",
+            "error_code": "d4010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机电机过热导致性能削减",
+            "error_code": "d5010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机电机温度传感器故障",
+            "error_code": "d6010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机驱动1输出连接线圈短路或开路",
+            "error_code": "d7010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机驱动2输出连接线圈短路或开路",
+            "error_code": "d8010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机驱动3输出连接线圈短路或开路",
+            "error_code": "d9010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机驱动4输出连接线圈短路或开路",
+            "error_code": "da010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机比例驱动开路/短路",
+            "error_code": "db010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机编码器失效",
+            "error_code": "dc010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机电机开路",
+            "error_code": "dd010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机主接触器粘连",
+            "error_code": "de010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机主接触器未吸合",
+            "error_code": "df010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机加速输出偏高",
+            "error_code": "e0010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机加速输出偏低",
+            "error_code": "e1010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机位器2输出偏高",
+            "error_code": "e2010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机位器2输出偏低",
+            "error_code": "e3010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机电位器低端电流过高",
+            "error_code": "e4010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机EEPROM失效",
+            "error_code": "e5010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机踏板保护/操作顺序错误",
+            "error_code": "e6010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机参数变更失败故障",
+            "error_code": "e7010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机转向电位器故障",
+            "error_code": "e8010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机1220C PDO报文超时故障",
+            "error_code": "e9010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机手柄CAN通讯超时",
+            "error_code": "ea010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机手柄操作顺序故障",
+            "error_code": "eb010d",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机控制模式故障",
+            "error_code": "ec010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机锂电池BMS保护故障",
+            "error_code": "ed010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机1356扩展模块转向命令输入故障",
+            "error_code": "ee010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机锂电池管理系统CAN通讯故障",
+            "error_code": "ef010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机1356扩展模块CAN通讯故障",
+            "error_code": "f1010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机转向控制器严重故障",
+            "error_code": "f2010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机转向控制器一般故障",
+            "error_code": "f3010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机AGV系统CAN通讯故障",
+            "error_code": "f4010d",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机转向控制器软件故障",
+            "error_code": "f5010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机VCL运行时间错误",
+            "error_code": "f6010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机外部电源输出超出范围",
+            "error_code": "f7010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机操作系统故障",
+            "error_code": "f8010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机PDO超时",
+            "error_code": "f9010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机电机堵转",
+            "error_code": "fa010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机电机匹配失效",
+            "error_code": "fb010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机电机类型错误",
+            "error_code": "fc010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机VCL/OS不匹配",
+            "error_code": "fd010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机电磁刹车设置失效",
+            "error_code": "fe010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机编码器受限操作状态",
+            "error_code": "ff010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机紧急反向反应超时",
+            "error_code": "100010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机控制器型号错误",
+            "error_code": "101010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走电机双电机参数不匹配",
+            "error_code": "102010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "ZL行走电机报错",
+            "error_code": "137010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机控制器电流过载",
+            "error_code": "103010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机电流传感器故障",
+            "error_code": "104010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机预充电故障",
+            "error_code": "105010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机控制器温度过低",
+            "error_code": "106010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机控制器温度过高",
+            "error_code": "107010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机电压过低",
+            "error_code": "108010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机电压过高",
+            "error_code": "109010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机电机极性错误",
+            "error_code": "10a010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机5V电源过载",
+            "error_code": "10b010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机12V电源过载",
+            "error_code": "10c010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机电机温度过高影响性能",
+            "error_code": "10d010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机内部继电器线圈损坏",
+            "error_code": "10e010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机转向电机电线短路",
+            "error_code": "10f010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机编码器故障",
+            "error_code": "110010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机输出断开故障",
+            "error_code": "111010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机转向电机堵转",
+            "error_code": "112010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机转向电机线路断开",
+            "error_code": "113010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机内部继电器粘连",
+            "error_code": "114010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机内部继电器未吸合",
+            "error_code": "115010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机输入信号1超范围",
+            "error_code": "116010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机输入信号2超范围",
+            "error_code": "117010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机模拟输入超范围",
+            "error_code": "118010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机模拟输入2超范围",
+            "error_code": "119010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机CAN不在可操作状态",
+            "error_code": "11a010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机内部非易失记忆缺陷",
+            "error_code": "11b010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机参数更改，需要重启",
+            "error_code": "11c010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机互锁开关故障",
+            "error_code": "11d010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机原点开关故障",
+            "error_code": "11e010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机原点位置未找到",
+            "error_code": "11f010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机定位接近开关故障",
+            "error_code": "120010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机转向输入设备故障",
+            "error_code": "121010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机位置反馈故障",
+            "error_code": "122010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机软件故障",
+            "error_code": "123010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机PDO1超时",
+            "error_code": "124010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机跟随错误",
+            "error_code": "125010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机硬件故障",
+            "error_code": "126010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机参数设置冲突",
+            "error_code": "127010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机CAN总线故障",
+            "error_code": "128010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机PDO映射错误",
+            "error_code": "129010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机校准数据超出范围",
+            "error_code": "12a010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机参数数据超出范围",
+            "error_code": "12b010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机监控有缺陷",
+            "error_code": "12c010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "RBT行走电机报错",
+            "error_code": "12d010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "RBT转向电机报错",
+            "error_code": "12e010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "调度路线长度与本地差异很大",
+            "error_code": "130010e",
+            "voice_index": 56,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "无法前往自动待命点，请检查交通图!",
+            "error_code": "131010e",
+            "voice_index": 63,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "等待调度回应绕障路线申请!",
+            "error_code": "132010d",
+            "voice_index": 64,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "无法绕障，请挪动障碍物!",
+            "error_code": "133010d",
+            "voice_index": 66,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "WC电机报错",
+            "error_code": "134010e",
+            "voice_index": 36,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "驱动器IO掉线!",
+            "error_code": "135010e",
+            "voice_index": 35,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "电池掉线",
+            "error_code": "136010d",
+            "voice_index": 83,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "货叉动作超时",
+            "error_code": "45014a",
+            "voice_index": 29,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "滚筒动作超时!",
+            "error_code": "46014a",
+            "voice_index": 30,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "驱动器复位失败，请重试",
+            "error_code": "47014a",
+            "voice_index": 34,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "SLAM地图加载失败",
+            "error_code": "30106",
+            "voice_index": 48,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "机器人即将启动",
+            "error_code": "500149",
+            "voice_index": 229,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "kc扩展错误",
+            "error_code": "88010e",
+            "voice_index": 77,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向电机驱动故障",
+            "error_code": "48014a",
+            "voice_index": 78,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "复合动作时间超时",
+            "error_code": "138010e",
+            "voice_index": 75,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "绕障进行中，请注意避让",
+            "error_code": "139010d",
+            "voice_index": 81,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "前雷达触发3级避障",
+            "error_code": "510149",
+            "voice_index": 3,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "前雷达触发2级避障",
+            "error_code": "520149",
+            "voice_index": 0,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "前雷达触发1级避障",
+            "error_code": "530149",
+            "voice_index": 0,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "后雷达触发3级避障",
+            "error_code": "540149",
+            "voice_index": 3,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "后雷达触发2级避障",
+            "error_code": "550149",
+            "voice_index": 0,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "后雷达触发1级避障",
+            "error_code": "560149",
+            "voice_index": 0,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "左雷达触发3级避障",
+            "error_code": "570149",
+            "voice_index": 3,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左雷达触发2级避障",
+            "error_code": "580149",
+            "voice_index": 0,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "左雷达触发1级避障",
+            "error_code": "590149",
+            "voice_index": 0,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "右雷达触发3级避障",
+            "error_code": "5a0149",
+            "voice_index": 3,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右雷达触发2级避障",
+            "error_code": "5b0149",
+            "voice_index": 0,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "右雷达触发1级避障",
+            "error_code": "5c0149",
+            "voice_index": 0,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "上雷达触发3级避障",
+            "error_code": "5d0149",
+            "voice_index": 3,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "上雷达触发2级避障",
+            "error_code": "5e0149",
+            "voice_index": 0,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "上雷达触发1级避障",
+            "error_code": "5f0149",
+            "voice_index": 0,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "下雷达触发3级避障",
+            "error_code": "600149",
+            "voice_index": 3,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "下雷达触发2级避障",
+            "error_code": "610149",
+            "voice_index": 0,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "下雷达触发1级避障",
+            "error_code": "620149",
+            "voice_index": 0,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "前相机触发3级避障",
+            "error_code": "630149",
+            "voice_index": 3,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "前相机触发2级避障",
+            "error_code": "640149",
+            "voice_index": 0,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "前相机触发1级避障",
+            "error_code": "650149",
+            "voice_index": 0,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "前避障雷达断开连接",
+            "error_code": "7d014a",
+            "voice_index": 84,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "后避障雷达断开连接",
+            "error_code": "7e014a",
+            "voice_index": 84,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左避障雷达断开连接",
+            "error_code": "7f014a",
+            "voice_index": 84,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右避障雷达断开连接",
+            "error_code": "80014a",
+            "voice_index": 84,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "上避障雷达断开连接",
+            "error_code": "81014a",
+            "voice_index": 84,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "下避障雷达断开连接",
+            "error_code": "82014a",
+            "voice_index": 84,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "前相机断开连接",
+            "error_code": "78014a",
+            "voice_index": 211,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "前相机切换区域失败",
+            "error_code": "74014a",
+            "voice_index": 89,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "前相机切换模式失败",
+            "error_code": "70014a",
+            "voice_index": 227,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "后相机断开连接",
+            "error_code": "7a014a",
+            "voice_index": 211,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "后相机切换区域失败",
+            "error_code": "75014a",
+            "voice_index": 89,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "后相机切换模式失败",
+            "error_code": "71014a",
+            "voice_index": 227,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左相机断开连接",
+            "error_code": "7b014a",
+            "voice_index": 211,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左相机切换区域失败",
+            "error_code": "76014a",
+            "voice_index": 89,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左相机切换模式失败",
+            "error_code": "72014a",
+            "voice_index": 227,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右相机断开连接",
+            "error_code": "7c014a",
+            "voice_index": 211,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右相机切换区域失败",
+            "error_code": "77014a",
+            "voice_index": 89,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右相机切换模式失败",
+            "error_code": "73014a",
+            "voice_index": 227,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "后相机触发3级避障",
+            "error_code": "660149",
+            "voice_index": 3,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "后相机触发2级避障",
+            "error_code": "670149",
+            "voice_index": 0,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "后相机触发1级避障",
+            "error_code": "680149",
+            "voice_index": 0,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "左相机触发3级避障",
+            "error_code": "690149",
+            "voice_index": 3,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左相机触发2级避障",
+            "error_code": "6a0149",
+            "voice_index": 0,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "左相机触发1级避障",
+            "error_code": "6b0149",
+            "voice_index": 0,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "右相机触发3级避障",
+            "error_code": "6c0149",
+            "voice_index": 3,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右相机触发2级避障",
+            "error_code": "6d0149",
+            "voice_index": 0,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "右相机触发1级避障",
+            "error_code": "6e0149",
+            "voice_index": 0,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "卫星导航初始化",
+            "error_code": "840149",
+            "voice_index": 148,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "卫星导航断开连接",
+            "error_code": "83014a",
+            "voice_index": 149,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "卫星信号弱",
+            "error_code": "144010d",
+            "voice_index": 150,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "宽度电机回零点失败",
+            "error_code": "6f014a",
+            "voice_index": 46,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "无法识别货物二维码",
+            "error_code": "5018d",
+            "voice_index": 129,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "车身背篓有货，无法取货",
+            "error_code": "6018e",
+            "voice_index": 130,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "车身车架有货，无法放货",
+            "error_code": "7018e",
+            "voice_index": 131,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "车身背篓无货，取货失败",
+            "error_code": "8018e",
+            "voice_index": 132,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "请抽奖",
+            "error_code": "350149",
+            "voice_index": 152,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "滚筒不存在下发的层级!",
+            "error_code": "2018e",
+            "voice_index": 222,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "货叉动作次数超过阈值!",
+            "error_code": "3018d",
+            "voice_index": 0,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "导航雷达触发避障",
+            "error_code": "50089",
+            "voice_index": 0,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "机器人正在通过，请注意安全",
+            "error_code": "50095",
+            "voice_index": 157,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "当前运动模型与DSP不一致，请检查",
+            "error_code": "42014a",
+            "voice_index": 0,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "AGV开始运动，请注意安全",
+            "error_code": "70010d",
+            "voice_index": 0,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "前移伸缩电机回零点失败",
+            "error_code": "85014a",
+            "voice_index": 46,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "夹抱电机回零点失败",
+            "error_code": "86014a",
+            "voice_index": 46,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "侧移电机回零点失败",
+            "error_code": "87014a",
+            "voice_index": 46,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "倾斜电机回零点失败",
+            "error_code": "88014a",
+            "voice_index": 46,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "倾角传感器通信断开",
+            "error_code": "89014a",
+            "voice_index": 0,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "前移伸缩轴拉线编码器通信断开",
+            "error_code": "90014a",
+            "voice_index": 88,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "前移伸缩向前动作超时",
+            "error_code": "91014a",
+            "voice_index": 75,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "前移伸缩向后动作超时",
+            "error_code": "92014a",
+            "voice_index": 75,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "俯仰向下动作超时",
+            "error_code": "93014a",
+            "voice_index": 75,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "俯仰向上动作超时",
+            "error_code": "94014a",
+            "voice_index": 75,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "软急停触发!",
+            "error_code": "143010d",
+            "voice_index": 0,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "终点不可达，请挪动附近障碍物!",
+            "error_code": "145010d",
+            "voice_index": 66,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左侧行走驱动发生错误!",
+            "error_code": "150010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左侧行走驱动过压!",
+            "error_code": "151010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左侧行走驱动欠压!",
+            "error_code": "152010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左侧行走驱动预充电错误!",
+            "error_code": "153010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左侧行走驱动过载/电流传感器故障!",
+            "error_code": "154010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左侧行走驱动控制器温度异常!",
+            "error_code": "155010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左侧行走驱动电机温度异常!",
+            "error_code": "156010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左侧行走驱动因温度降功率!",
+            "error_code": "157010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左侧行走驱动电机开路!",
+            "error_code": "158010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左侧行走驱动电机短路!",
+            "error_code": "159010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左侧行走驱动堵转/速度异常!",
+            "error_code": "15a010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左侧行走驱动电机类型/相位/极性错误!",
+            "error_code": "15b010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左侧行走驱动编码器信号丢失!",
+            "error_code": "15c010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左侧行走驱动编码器反馈异常!",
+            "error_code": "15d010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左侧行走驱动消息/PDO超时!",
+            "error_code": "15e010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左侧行走驱动通信总线异常!",
+            "error_code": "15f010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左侧行走驱动消息校验错误!",
+            "error_code": "160010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左侧行走驱动通信映射错误!",
+            "error_code": "161010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左侧行走驱动油门/模拟输入/原点/限位信号异常!",
+            "error_code": "162010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左侧行走驱动制动信号/保护/STO信号异常!",
+            "error_code": "163010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左侧行走驱动模拟量超限!",
+            "error_code": "164010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左侧行走驱动接触器/继电器故障!",
+            "error_code": "165010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左侧行走驱动软件运行故障!",
+            "error_code": "167010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左侧行走驱动用户自定义故障!",
+            "error_code": "168010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左侧行走驱动固件损坏/版本不匹配!",
+            "error_code": "169010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左侧行走驱动EEPROM/NV 存储器错误!",
+            "error_code": "16a010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左侧行走驱动参数超范围/冲突!",
+            "error_code": "16b010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右侧行走驱动发生错误!",
+            "error_code": "170010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右侧行走驱动过压!",
+            "error_code": "171010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右侧行走驱动欠压!",
+            "error_code": "172010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右侧行走驱动预充电错误!",
+            "error_code": "173010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右侧行走驱动过载/电流传感器故障!",
+            "error_code": "174010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右侧行走驱动控制器温度异常!",
+            "error_code": "175010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右侧行走驱动电机温度异常!",
+            "error_code": "176010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右侧行走驱动因温度降功率!",
+            "error_code": "177010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右侧行走驱动电机开路!",
+            "error_code": "178010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右侧行走驱动电机短路!",
+            "error_code": "179010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右侧行走驱动堵转/速度异常!",
+            "error_code": "17a010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右侧行走驱动电机类型/相位/极性错误!",
+            "error_code": "17b010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右侧行走驱动编码器信号丢失!",
+            "error_code": "17c010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右侧行走驱动编码器反馈异常!",
+            "error_code": "17d010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右侧行走驱动消息/PDO超时!",
+            "error_code": "17e010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右侧行走驱动通信总线异常!",
+            "error_code": "17f010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右侧行走驱动消息校验错误!",
+            "error_code": "180010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右侧行走驱动通信映射错误!",
+            "error_code": "181010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右侧行走驱动油门/模拟输入/原点/限位信号异常!",
+            "error_code": "182010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右侧行走驱动制动信号/保护/STO信号异常!",
+            "error_code": "183010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右侧行走驱动模拟量超限!",
+            "error_code": "184010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右侧行走驱动接触器/继电器故障!",
+            "error_code": "185010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右侧行走驱动软件运行故障!",
+            "error_code": "187010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右侧行走驱动用户自定义故障!",
+            "error_code": "188010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右侧行走驱动固件损坏/版本不匹配!",
+            "error_code": "189010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右侧行走驱动EEPROM/NV 存储器错误!",
+            "error_code": "18a010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右侧行走驱动参数超范围/冲突!",
+            "error_code": "18b010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "升降机构驱动发生错误!",
+            "error_code": "190010e",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "升降机构驱动过压!",
+            "error_code": "191010e",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "升降机构驱动欠压!",
+            "error_code": "192010e",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "升降机构驱动预充电错误!",
+            "error_code": "193010e",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "升降机构驱动过载/电流传感器故障!",
+            "error_code": "194010e",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "升降机构驱动控制器温度异常!",
+            "error_code": "195010e",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "升降机构驱动电机温度异常!",
+            "error_code": "196010e",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "升降机构驱动因温度降功率!",
+            "error_code": "197010e",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "升降机构驱动电机开路!",
+            "error_code": "198010e",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "升降机构驱动电机短路!",
+            "error_code": "199010e",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "升降机构驱动堵转/速度异常!",
+            "error_code": "19a010e",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "升降机构驱动电机类型/相位/极性错误!",
+            "error_code": "19b010e",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "升降机构驱动编码器信号丢失!",
+            "error_code": "19c010e",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "升降机构驱动编码器反馈异常!",
+            "error_code": "19d010e",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "升降机构驱动消息/PDO超时!",
+            "error_code": "19e010e",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "升降机构驱动通信总线异常!",
+            "error_code": "19f010e",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "升降机构驱动消息校验错误!",
+            "error_code": "1a0010e",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "升降机构驱动通信映射错误!",
+            "error_code": "1a1010e",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "升降机构驱动油门/模拟输入/原点/限位信号异常!",
+            "error_code": "1a2010e",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "升降机构驱动制动信号/保护/STO信号异常!",
+            "error_code": "1a3010e",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "升降机构驱动模拟量超限!",
+            "error_code": "1a4010e",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "升降机构驱动接触器/继电器故障!",
+            "error_code": "1a5010e",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "升降机构驱动软件运行故障!",
+            "error_code": "1a7010e",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "升降机构驱动用户自定义故障!",
+            "error_code": "1a8010e",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "升降机构驱动固件损坏/版本不匹配!",
+            "error_code": "1a9010e",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "升降机构驱动EEPROM/NV 存储器错误!",
+            "error_code": "1aa010e",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "升降机构驱动参数超范围/冲突!",
+            "error_code": "1ab010e",
+            "voice_index": 144,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转机构驱动发生错误!",
+            "error_code": "1b0010e",
+            "voice_index": 133,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转机构驱动过压!",
+            "error_code": "1b1010e",
+            "voice_index": 133,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转机构驱动欠压!",
+            "error_code": "1b2010e",
+            "voice_index": 133,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转机构驱动预充电错误!",
+            "error_code": "1b3010e",
+            "voice_index": 133,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转机构驱动过载/电流传感器故障!",
+            "error_code": "1b4010e",
+            "voice_index": 133,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转机构驱动控制器温度异常!",
+            "error_code": "1b5010e",
+            "voice_index": 133,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转机构驱动电机温度异常!",
+            "error_code": "1b6010e",
+            "voice_index": 133,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转机构驱动因温度降功率!",
+            "error_code": "1b7010e",
+            "voice_index": 133,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转机构驱动电机开路!",
+            "error_code": "1b8010e",
+            "voice_index": 133,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转机构驱动电机短路!",
+            "error_code": "1b9010e",
+            "voice_index": 133,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转机构驱动堵转/速度异常!",
+            "error_code": "1ba010e",
+            "voice_index": 133,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转机构驱动电机类型/相位/极性错误!",
+            "error_code": "1bb010e",
+            "voice_index": 133,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转机构驱动编码器信号丢失!",
+            "error_code": "1bc010e",
+            "voice_index": 133,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转机构驱动编码器反馈异常!",
+            "error_code": "1bd010e",
+            "voice_index": 133,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转机构驱动消息/PDO超时!",
+            "error_code": "1be010e",
+            "voice_index": 133,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转机构驱动通信总线异常!",
+            "error_code": "1bf010e",
+            "voice_index": 133,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转机构驱动消息校验错误!",
+            "error_code": "1c0010e",
+            "voice_index": 133,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转机构驱动通信映射错误!",
+            "error_code": "1c1010e",
+            "voice_index": 133,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转机构驱动油门/模拟输入/原点/限位信号异常!",
+            "error_code": "1c2010e",
+            "voice_index": 133,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转机构驱动制动信号/保护/STO信号异常!",
+            "error_code": "1c3010e",
+            "voice_index": 133,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转机构驱动模拟量超限!",
+            "error_code": "1c4010e",
+            "voice_index": 133,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转机构驱动接触器/继电器故障!",
+            "error_code": "1c5010e",
+            "voice_index": 133,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转机构驱动软件运行故障!",
+            "error_code": "1c7010e",
+            "voice_index": 133,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转机构驱动用户自定义故障!",
+            "error_code": "1c8010e",
+            "voice_index": 133,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转机构驱动固件损坏/版本不匹配!",
+            "error_code": "1c9010e",
+            "voice_index": 133,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转机构驱动EEPROM/NV 存储器错误!",
+            "error_code": "1ca010e",
+            "voice_index": 133,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "回转机构驱动参数超范围/冲突!",
+            "error_code": "1cb010e",
+            "voice_index": 133,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动发生错误!",
+            "error_code": "1d0010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动过压!",
+            "error_code": "1d1010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动欠压!",
+            "error_code": "1d2010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动预充电错误!",
+            "error_code": "1d3010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动过载/电流传感器故障!",
+            "error_code": "1d4010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动控制器温度异常!",
+            "error_code": "1d5010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动电机温度异常!",
+            "error_code": "1d6010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动因温度降功率!",
+            "error_code": "1d7010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动电机开路!",
+            "error_code": "1d8010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动电机短路!",
+            "error_code": "1d9010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动堵转/速度异常!",
+            "error_code": "1da010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动电机类型/相位/极性错误!",
+            "error_code": "1db010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动编码器信号丢失!",
+            "error_code": "1dc010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动编码器反馈异常!",
+            "error_code": "1dd010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动消息/PDO超时!",
+            "error_code": "1de010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动通信总线异常!",
+            "error_code": "1df010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动消息校验错误!",
+            "error_code": "1e0010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动通信映射错误!",
+            "error_code": "1e1010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动油门/模拟输入/原点/限位信号异常!",
+            "error_code": "1e2010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动制动信号/保护/STO信号异常!",
+            "error_code": "1e3010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动模拟量超限!",
+            "error_code": "1e4010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动接触器/继电器故障!",
+            "error_code": "1e5010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动软件运行故障!",
+            "error_code": "1e7010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动用户自定义故障!",
+            "error_code": "1e8010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动固件损坏/版本不匹配!",
+            "error_code": "1e9010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动EEPROM/NV 存储器错误!",
+            "error_code": "1ea010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "行走驱动参数超范围/冲突!",
+            "error_code": "1eb010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动发生错误!",
+            "error_code": "1f0010e",
+            "voice_index": 11,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动过压!",
+            "error_code": "1f1010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动欠压!",
+            "error_code": "1f2010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动预充电错误!",
+            "error_code": "1f3010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动过载/电流传感器故障!",
+            "error_code": "1f4010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动控制器温度异常!",
+            "error_code": "1f5010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动电机温度异常!",
+            "error_code": "1f6010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动因温度降功率!",
+            "error_code": "1f7010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动电机开路!",
+            "error_code": "1f8010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动电机短路!",
+            "error_code": "1f9010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动堵转/速度异常!",
+            "error_code": "1fa010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动电机类型/相位/极性错误!",
+            "error_code": "1fb010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动编码器信号丢失!",
+            "error_code": "1fc010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动编码器反馈异常!",
+            "error_code": "1fd010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动消息/PDO超时!",
+            "error_code": "1fe010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动通信总线异常!",
+            "error_code": "1ff010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动通信映射错误!",
+            "error_code": "201010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动油门/模拟输入/原点/限位信号异常!",
+            "error_code": "202010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动制动信号/保护/STO信号异常!",
+            "error_code": "203010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动模拟量超限!",
+            "error_code": "204010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动接触器/继电器故障!",
+            "error_code": "205010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动软件运行故障!",
+            "error_code": "207010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动用户自定义故障!",
+            "error_code": "208010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动固件损坏/版本不匹配!",
+            "error_code": "209010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动EEPROM/NV 存储器错误!",
+            "error_code": "20a010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "转向驱动参数超范围/冲突!",
+            "error_code": "20b010e",
+            "voice_index": 21,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展负载驱动发生错误!",
+            "error_code": "210010e",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展负载驱动过压!",
+            "error_code": "211010e",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展负载驱动欠压!",
+            "error_code": "212010e",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展负载驱动预充电错误!",
+            "error_code": "213010e",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展负载驱动过载/电流传感器故障!",
+            "error_code": "214010e",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展负载驱动控制器温度异常!",
+            "error_code": "215010e",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展负载驱动电机温度异常!",
+            "error_code": "216010e",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展负载驱动因温度降功率!",
+            "error_code": "217010e",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展负载驱动电机开路!",
+            "error_code": "218010e",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展负载驱动电机短路!",
+            "error_code": "219010e",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展负载驱动堵转/速度异常!",
+            "error_code": "21a010e",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展负载驱动电机类型/相位/极性错误!",
+            "error_code": "21b010e",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展负载驱动编码器信号丢失!",
+            "error_code": "21c010e",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展负载驱动编码器反馈异常!",
+            "error_code": "21d010e",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展负载驱动消息/PDO超时!",
+            "error_code": "21e010e",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展负载驱动通信总线异常!",
+            "error_code": "21f010e",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展负载驱动消息校验错误!",
+            "error_code": "220010e",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展负载驱动通信映射错误!",
+            "error_code": "221010e",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展负载驱动油门/模拟输入/原点/限位信号异常!",
+            "error_code": "222010e",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展负载驱动制动信号/保护/STO信号异常!",
+            "error_code": "223010e",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展负载驱动模拟量超限!",
+            "error_code": "224010e",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展负载驱动接触器/继电器故障!",
+            "error_code": "225010e",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展负载驱动软件运行故障!",
+            "error_code": "227010e",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展负载驱动用户自定义故障!",
+            "error_code": "228010e",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展负载驱动固件损坏/版本不匹配!",
+            "error_code": "229010e",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展负载驱动EEPROM/NV 存储器错误!",
+            "error_code": "22a010e",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "扩展负载驱动参数超范围/冲突!",
+            "error_code": "22b010e",
+            "voice_index": 10,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "就绪中!",
+            "error_code": "950149",
+            "voice_index": 2,
+            "light_index": 10,
+            "expand": false
+        },
+        {
+            "error_description": "左行走电机STO断开!",
+            "error_code": "960149",
+            "voice_index": 232,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右行走电机STO断开!",
+            "error_code": "970149",
+            "voice_index": 233,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "顶升电机STO断开!",
+            "error_code": "980149",
+            "voice_index": 165,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "急停按钮故障!",
+            "error_code": "99014a",
+            "voice_index": 70,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "触边故障!",
+            "error_code": "9a014a",
+            "voice_index": 79,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "急停解除待复位!",
+            "error_code": "9b0149",
+            "voice_index": 246,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "触边解除待复位!",
+            "error_code": "9c0149",
+            "voice_index": 247,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "PLC系统故障!",
+            "error_code": "9d0149",
+            "voice_index": 248,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左轮编码器故障!",
+            "error_code": "9e014a",
+            "voice_index": 249,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右轮编码器故障!",
+            "error_code": "9f014a",
+            "voice_index": 250,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "左轮编码器状态差异!",
+            "error_code": "a0014a",
+            "voice_index": 251,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "右轮编码器状态差异!",
+            "error_code": "a1014a",
+            "voice_index": 252,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "车辆超速!",
+            "error_code": "a20149",
+            "voice_index": 67,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "TOF传感器通信断开!",
+            "error_code": "95014a",
+            "voice_index": 212,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "TOF避障",
+            "error_code": "960149",
+            "voice_index": 3,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "库位有货请检查!",
+            "error_code": "232010e",
+            "voice_index": 219,
+            "light_index": 12,
+            "expand": false
+        },
+        {
+            "error_description": "库位无货，请检查!",
+            "error_code": "233010e",
+            "voice_index": 196,
+            "light_index": 12,
+            "expand": false
+        }
+    ]
+}

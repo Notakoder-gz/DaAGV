@@ -12,6 +12,7 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@tauri-apps/api": "^2.3.0",
     "clsx": "^2.1.1",
     "konva": "^9.3.18",
     "lucide-react": "^0.475.0",

@@ -1,0 +1,18 @@
+[package]
+name = "amr-map-editor"
+version = "1.0.0"
+description = "AMR / AGV 2D Map & Traffic Editor"
+authors = ["AMR Team"]
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]

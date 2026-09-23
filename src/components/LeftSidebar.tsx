@@ -1,20 +1,22 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { EditorState } from '../store/editorStore';
-import { Eye, EyeOff, Layers, FolderOpen, Download, RefreshCw, Move } from 'lucide-react';
+import { Eye, EyeOff, Layers, Upload, Download, Paintbrush, Eraser } from 'lucide-react';
 
 interface LeftSidebarProps {
   state: EditorState;
   setState: React.Dispatch<React.SetStateAction<EditorState>>;
-  onLoadProject: (projectId: string) => void;
+  onImportFiles: (files: FileList) => void;
   onExportProject: () => void;
 }
 
 export const LeftSidebar: React.FC<LeftSidebarProps> = ({
   state,
   setState,
-  onLoadProject,
+  onImportFiles,
   onExportProject,
 }) => {
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
+
   const toggleLayerVisibility = (layerKey: 'baseMap' | 'trafficMap') => {
     setState((prev) => ({
       ...prev,
@@ -41,8 +43,24 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
     }));
   };
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      onImportFiles(e.target.files);
+      e.target.value = '';
+    }
+  };
+
   return (
     <div className="w-80 bg-slate-900 border-r border-slate-800 flex flex-col justify-between h-full select-none text-xs">
+      <input
+        type="file"
+        ref={fileInputRef}
+        onChange={handleFileChange}
+        multiple
+        accept=".json,.png,.pgm,.jpg,.jpeg,.yaml"
+        className="hidden"
+      />
+
       <div className="p-4 space-y-6 overflow-y-auto">
         {/* Header */}
         <div>
@@ -50,39 +68,26 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
             <Layers className="w-4 h-4 text-blue-500" />
             <span>Map Workspace & Layers</span>
           </h2>
-          <p className="text-slate-400 mt-0.5">AMR/AGV Map Configuration</p>
+          <p className="text-slate-400 mt-0.5 font-mono">
+            ID: {state.projectInfo.project_id || 'Untitled Project'}
+          </p>
         </div>
 
-        {/* Project Selector */}
+        {/* Project Import / File Management */}
         <div className="bg-slate-950 p-3 rounded-lg border border-slate-800 space-y-3">
           <div className="flex items-center justify-between text-slate-300 font-medium">
             <span className="flex items-center space-x-1.5">
-              <FolderOpen className="w-3.5 h-3.5 text-amber-500" />
-              <span>Project Sample</span>
+              <Upload className="w-3.5 h-3.5 text-amber-500" />
+              <span>Project Import</span>
             </span>
           </div>
-          <div className="grid grid-cols-2 gap-2">
-            <button
-              onClick={() => onLoadProject('perekresto')}
-              className={`px-3 py-1.5 rounded border font-medium transition-colors ${
-                state.projectInfo.project_id === 'perekresto'
-                  ? 'bg-blue-600/20 border-blue-500 text-blue-300'
-                  : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-slate-200'
-              }`}
-            >
-              Perekresto
-            </button>
-            <button
-              onClick={() => onLoadProject('1june')}
-              className={`px-3 py-1.5 rounded border font-medium transition-colors ${
-                state.projectInfo.project_id === '1june'
-                  ? 'bg-blue-600/20 border-blue-500 text-blue-300'
-                  : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-slate-200'
-              }`}
-            >
-              1June Project
-            </button>
-          </div>
+
+          <button
+            onClick={() => fileInputRef.current?.click()}
+            className="w-full py-2 bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/40 text-blue-300 font-semibold rounded-lg text-xs transition-colors"
+          >
+            Load Map Files (.json, .png, .yaml)
+          </button>
         </div>
 
         {/* Layers Control */}
@@ -158,7 +163,14 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
         {(state.activeTool === 'brush' || state.activeTool === 'eraser') && (
           <div className="bg-slate-950 p-3 rounded-lg border border-slate-800 space-y-2">
             <div className="flex items-center justify-between text-slate-300 font-medium">
-              <span>Brush Size ({state.brush.size}px)</span>
+              <span className="flex items-center space-x-1.5">
+                {state.activeTool === 'brush' ? (
+                  <Paintbrush className="w-3.5 h-3.5 text-blue-400" />
+                ) : (
+                  <Eraser className="w-3.5 h-3.5 text-pink-400" />
+                )}
+                <span>Brush Size ({state.brush.size}px)</span>
+              </span>
             </div>
             <input
               type="range"

@@ -10,23 +10,28 @@ export type ActiveTool =
   | 'add_edge'
   | 'add_zone';
 
+export type MainTab = 'editor' | 'vda_simulator';
+
 export interface LayerState {
   visible: boolean;
   opacity: number;
 }
 
 export interface SelectionState {
-  type: 'node' | 'edge' | 'zone' | null;
+  type: 'node' | 'edge' | 'zone' | 'control_point' | null;
   id: number | string | null;
+  controlPointIndex?: number; // For Bezier curve control points
 }
 
 export interface EditorState {
+  mainTab: MainTab;
+
   // Map Data
   mapConfig: MapConfig;
   projectInfo: ProjectInfo;
   trafficMap: TrafficMap;
 
-  // Base Map Image Canvas element (used for pixel editing and Konva rendering)
+  // Base Map Image Canvas element
   baseMapCanvas: HTMLCanvasElement | null;
   baseMapLoaded: boolean;
 
@@ -46,7 +51,7 @@ export interface EditorState {
   // Zone Creation Temp State
   pendingZonePoints: TrafficSitePoint[];
 
-  // Alignment Temp State (visual offsets applied during alignment mode)
+  // Alignment Temp State
   alignmentOffset: {
     x: number; // mm
     y: number; // mm
@@ -57,7 +62,7 @@ export interface EditorState {
   // Brush / Eraser Settings
   brush: {
     size: number; // pixels
-    value: 0 | 255 | 128; // 0 = wall (black), 255 = free space (white), 128 = unknown (grey)
+    value: 0 | 255 | 128;
   };
 
   // Canvas Viewport (Pan & Zoom)
@@ -69,6 +74,7 @@ export interface EditorState {
 }
 
 export const initialEditorState: EditorState = {
+  mainTab: 'editor',
   mapConfig: {
     width: 2000,
     height: 1200,
@@ -78,17 +84,17 @@ export const initialEditorState: EditorState = {
     occ_th: 0.65,
   },
   projectInfo: {
-    project_id: 'perekresto',
-    map_origin_offset_x: -3922,
-    map_origin_offset_y: -1773,
-    map_origin_offset_theta: 357.055,
+    project_id: 'new_project',
+    map_origin_offset_x: 0,
+    map_origin_offset_y: 0,
+    map_origin_offset_theta: 0,
     navi_type: 1,
   },
   trafficMap: {
     map_info: {
       name: 'DEMO',
-      project_id: 'perekresto',
-      map_name: 'perekresto@DEMO',
+      project_id: 'new_project',
+      map_name: 'new_project@DEMO',
     },
     sites: [],
     lines: [],
@@ -105,9 +111,9 @@ export const initialEditorState: EditorState = {
   edgeStartSiteCode: null,
   pendingZonePoints: [],
   alignmentOffset: {
-    x: -3922,
-    y: -1773,
-    theta: 357.055,
+    x: 0,
+    y: 0,
+    theta: 0,
     scale: 1.0,
   },
   brush: {
@@ -117,6 +123,6 @@ export const initialEditorState: EditorState = {
   viewport: {
     x: 400,
     y: 300,
-    scale: 1.0,
+    scale: 0.8,
   },
 };

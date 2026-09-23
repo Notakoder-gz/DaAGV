@@ -14,6 +14,11 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
   const isPanning = useRef(false);
   const startPanPos = useRef({ x: 0, y: 0 });
   const isDrawing = useRef(false);
+  const isDraggingItem = useRef<
+    | { type: 'site'; code: number }
+    | { type: 'control_point'; lineCode: number; pointIndex: number }
+    | null
+  >(null);
 
   const { viewport, mapConfig, activeTool, layers, trafficMap, selection } = state;
 
@@ -37,6 +42,17 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
     return CoordinateTransform.worldToTraffic(worldAligned.x, worldAligned.y);
   };
 
+  // Convert site millimeter coordinates to pixel space on base map
+  const siteToPixel = (pt: TrafficSitePoint) => {
+    const worldMeters = CoordinateTransform.trafficToWorld(pt);
+    const rawWorld = CoordinateTransform.removeOffsetFromWorld(
+      worldMeters.x,
+      worldMeters.y,
+      state.projectInfo
+    );
+    return CoordinateTransform.worldToPixel(rawWorld.x, rawWorld.y, mapConfig);
+  };
+
   // Main Render Loop
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -56,7 +72,7 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
     ctx.translate(viewport.x, viewport.y);
     ctx.scale(viewport.scale, viewport.scale);
 
-    // 1. Render Base Map
+    // 1. Render Base SLAM Map Raster
     if (layers.baseMap.visible) {
       ctx.globalAlpha = layers.baseMap.opacity;
       if (state.baseMapCanvas) {
@@ -74,17 +90,7 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
     if (layers.trafficMap.visible) {
       ctx.globalAlpha = layers.trafficMap.opacity;
 
-      const siteToPixel = (pt: TrafficSitePoint) => {
-        const worldMeters = CoordinateTransform.trafficToWorld(pt);
-        const rawWorld = CoordinateTransform.removeOffsetFromWorld(
-          worldMeters.x,
-          worldMeters.y,
-          state.projectInfo
-        );
-        return CoordinateTransform.worldToPixel(rawWorld.x, rawWorld.y, mapConfig);
-      };
-
-      // Zones
+      // Draw Zones
       if (trafficMap.zones) {
         for (const zone of trafficMap.zones) {
           if (!zone.points || zone.points.length < 3) continue;
@@ -117,7 +123,7 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
         }
       }
 
-      // Pending Zone Points
+      // Draw Pending Zone Points
       if (state.pendingZonePoints.length > 0) {
         ctx.beginPath();
         const firstPx = siteToPixel(state.pendingZonePoints[0]);
@@ -136,7 +142,7 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
       const siteMap = new Map<number, TrafficSite>();
       trafficMap.sites.forEach((s) => siteMap.set(s.code, s));
 
-      // Edges
+      // Draw Edges / Lines (Straight & Bezier Curves)
       trafficMap.lines.forEach((line) => {
         const s1 = siteMap.get(line.sites[0]);
         const s2 = siteMap.get(line.sites[1]);
@@ -149,17 +155,63 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
 
         ctx.beginPath();
         ctx.moveTo(p1.x, p1.y);
-        ctx.lineTo(p2.x, p2.y);
+
+        // Check if Bezier Curve (Type 2) with control points
+        if (line.type === 2 && line.curve_control_points && line.curve_control_points.length > 0) {
+          const cp1 = siteToPixel(line.curve_control_points[0]);
+          if (line.curve_control_points.length >= 2) {
+            const cp2 = siteToPixel(line.curve_control_points[1]);
+            ctx.bezierCurveTo(cp1.x, cp1.y, cp2.x, cp2.y, p2.x, p2.y);
+          } else {
+            ctx.quadraticCurveTo(cp1.x, cp1.y, p2.x, p2.y);
+          }
+        } else {
+          ctx.lineTo(p2.x, p2.y);
+        }
 
         ctx.strokeStyle = isSelected ? '#38bdf8' : line.type === 2 ? '#a855f7' : '#22c55e';
         ctx.lineWidth = isSelected ? 4 / viewport.scale : 2 / viewport.scale;
         ctx.stroke();
 
-        const angle = Math.atan2(p2.y - p1.y, p2.x - p1.x);
-        const midX = (p1.x + p2.x) / 2;
-        const midY = (p1.y + p2.y) / 2;
-        const arrowSize = 8 / viewport.scale;
+        // Render Control Points & Handles if Curve is selected or Type 2
+        if (line.type === 2) {
+          const cps = line.curve_control_points || [];
+          cps.forEach((cpPoint, index) => {
+            const cpPx = siteToPixel(cpPoint);
 
+            // Control Handle Line
+            ctx.beginPath();
+            ctx.moveTo(index === 0 ? p1.x : p2.x, index === 0 ? p1.y : p2.y);
+            ctx.lineTo(cpPx.x, cpPx.y);
+            ctx.strokeStyle = '#c084fc';
+            ctx.lineWidth = 1 / viewport.scale;
+            ctx.setLineDash([3 / viewport.scale, 3 / viewport.scale]);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            // Control Handle Node
+            ctx.beginPath();
+            ctx.arc(cpPx.x, cpPx.y, 5 / viewport.scale, 0, Math.PI * 2);
+            ctx.fillStyle = '#a855f7';
+            ctx.fill();
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 1.5 / viewport.scale;
+            ctx.stroke();
+          });
+        }
+
+        // Directional Arrow Indicator
+        let angle = Math.atan2(p2.y - p1.y, p2.x - p1.x);
+        let midX = (p1.x + p2.x) / 2;
+        let midY = (p1.y + p2.y) / 2;
+
+        if (line.type === 2 && line.curve_control_points && line.curve_control_points.length > 0) {
+          const cp1 = siteToPixel(line.curve_control_points[0]);
+          midX = 0.25 * p1.x + 0.5 * cp1.x + 0.25 * p2.x;
+          midY = 0.25 * p1.y + 0.5 * cp1.y + 0.25 * p2.y;
+        }
+
+        const arrowSize = 8 / viewport.scale;
         ctx.save();
         ctx.translate(midX, midY);
         ctx.rotate(angle);
@@ -167,13 +219,13 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
         ctx.moveTo(-arrowSize, -arrowSize / 2);
         ctx.lineTo(0, 0);
         ctx.lineTo(-arrowSize, arrowSize / 2);
-        ctx.strokeStyle = isSelected ? '#38bdf8' : '#22c55e';
+        ctx.strokeStyle = isSelected ? '#38bdf8' : line.type === 2 ? '#a855f7' : '#22c55e';
         ctx.lineWidth = 2 / viewport.scale;
         ctx.stroke();
         ctx.restore();
       });
 
-      // Sites
+      // Sites / Waypoints
       trafficMap.sites.forEach((site) => {
         const p = siteToPixel(site.point);
         const isSelected = selection.type === 'node' && selection.id === site.code;
@@ -187,6 +239,21 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
         ctx.strokeStyle = '#ffffff';
         ctx.lineWidth = 1.5 / viewport.scale;
         ctx.stroke();
+
+        // Direction Indicator Heading Arrow if stop_dir is set
+        if (site.stop_dir !== undefined && site.stop_dir >= 0) {
+          const headingRad = (site.stop_dir * Math.PI) / 180.0;
+          const arrowLen = 16 / viewport.scale;
+          const hx = p.x + arrowLen * Math.cos(headingRad);
+          const hy = p.y - arrowLen * Math.sin(headingRad); // Inverted screen Y
+
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(hx, hy);
+          ctx.strokeStyle = '#f43f5e'; // rose-500
+          ctx.lineWidth = 2 / viewport.scale;
+          ctx.stroke();
+        }
 
         ctx.font = `${Math.max(10, 12 / viewport.scale)}px sans-serif`;
         ctx.fillStyle = '#94a3b8';
@@ -228,12 +295,14 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
 
     const trafficPt = clientToTraffic(e.clientX, e.clientY);
 
+    // Brush or Eraser
     if ((activeTool === 'brush' || activeTool === 'eraser') && state.baseMapCanvas) {
       isDrawing.current = true;
       paintOnCanvas(e.clientX, e.clientY);
       return;
     }
 
+    // Add Node
     if (activeTool === 'add_node') {
       const maxCode = state.trafficMap.sites.reduce((max, s) => Math.max(max, s.code), 0);
       const newCode = maxCode + 1;
@@ -244,6 +313,7 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
         type: 1,
         collision: 3,
         full_collision: 3,
+        stop_dir: -1,
       };
 
       setState((prev) => ({
@@ -257,6 +327,7 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
       return;
     }
 
+    // Add Edge
     if (activeTool === 'add_edge') {
       const clickedSite = findSiteNearTrafficPoint(trafficPt, 500);
       if (clickedSite) {
@@ -271,6 +342,7 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
             type: 1,
             speed: 400,
             full_speed: 400,
+            path_dir: 0,
           };
           setState((prev) => ({
             ...prev,
@@ -286,6 +358,7 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
       return;
     }
 
+    // Add Zone
     if (activeTool === 'add_zone') {
       setState((prev) => ({
         ...prev,
@@ -294,12 +367,42 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
       return;
     }
 
+    // Select & Drag
     if (activeTool === 'select') {
+      // Check Bezier control point hit
+      for (const line of state.trafficMap.lines) {
+        if (line.type === 2 && line.curve_control_points) {
+          for (let idx = 0; idx < line.curve_control_points.length; idx++) {
+            const cp = line.curve_control_points[idx];
+            const dx = cp.x - trafficPt.x;
+            const dy = cp.y - trafficPt.y;
+            if (Math.sqrt(dx * dx + dy * dy) <= 400) {
+              isDraggingItem.current = { type: 'control_point', lineCode: line.code, pointIndex: idx };
+              setState((prev) => ({
+                ...prev,
+                selection: { type: 'edge', id: line.code, controlPointIndex: idx },
+              }));
+              return;
+            }
+          }
+        }
+      }
+
+      // Check Site hit
       const site = findSiteNearTrafficPoint(trafficPt, 500);
       if (site) {
+        isDraggingItem.current = { type: 'site', code: site.code };
         setState((prev) => ({ ...prev, selection: { type: 'node', id: site.code } }));
         return;
       }
+
+      // Check Edge hit
+      const edge = findEdgeNearTrafficPoint(trafficPt, 400);
+      if (edge) {
+        setState((prev) => ({ ...prev, selection: { type: 'edge', id: edge.code } }));
+        return;
+      }
+
       setState((prev) => ({ ...prev, selection: { type: null, id: null } }));
     }
   };
@@ -319,12 +422,46 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
 
     if (isDrawing.current && (activeTool === 'brush' || activeTool === 'eraser')) {
       paintOnCanvas(e.clientX, e.clientY);
+      return;
+    }
+
+    // Dragging site or Bezier control point
+    if (isDraggingItem.current && activeTool === 'select') {
+      const trafficPt = clientToTraffic(e.clientX, e.clientY);
+
+      if (isDraggingItem.current.type === 'site') {
+        const siteCode = isDraggingItem.current.code;
+        setState((prev) => ({
+          ...prev,
+          trafficMap: {
+            ...prev.trafficMap,
+            sites: prev.trafficMap.sites.map((s) =>
+              s.code === siteCode ? { ...s, point: trafficPt } : s
+            ),
+          },
+        }));
+      } else if (isDraggingItem.current.type === 'control_point') {
+        const { lineCode, pointIndex } = isDraggingItem.current;
+        setState((prev) => ({
+          ...prev,
+          trafficMap: {
+            ...prev.trafficMap,
+            lines: prev.trafficMap.lines.map((l) => {
+              if (l.code !== lineCode) return l;
+              const newPoints = [...(l.curve_control_points || [])];
+              newPoints[pointIndex] = trafficPt;
+              return { ...l, curve_control_points: newPoints };
+            }),
+          },
+        }));
+      }
     }
   };
 
   const handleMouseUp = () => {
     isPanning.current = false;
     isDrawing.current = false;
+    isDraggingItem.current = null;
   };
 
   const paintOnCanvas = (clientX: number, clientY: number) => {
@@ -353,6 +490,38 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
       const dy = site.point.y - pt.y;
       if (Math.sqrt(dx * dx + dy * dy) <= radiusMm) {
         return site;
+      }
+    }
+    return null;
+  };
+
+  const findEdgeNearTrafficPoint = (pt: TrafficSitePoint, radiusMm: number): TrafficLine | null => {
+    const siteMap = new Map<number, TrafficSite>();
+    state.trafficMap.sites.forEach((s) => siteMap.set(s.code, s));
+
+    for (const line of state.trafficMap.lines) {
+      const s1 = siteMap.get(line.sites[0]);
+      const s2 = siteMap.get(line.sites[1]);
+      if (!s1 || !s2) continue;
+
+      const p1 = s1.point;
+      const p2 = s2.point;
+
+      // Distance from point pt to line segment p1-p2
+      const dx = p2.x - p1.x;
+      const dy = p2.y - p1.y;
+      const lenSq = dx * dx + dy * dy;
+      if (lenSq === 0) continue;
+
+      let t = ((pt.x - p1.x) * dx + (pt.y - p1.y) * dy) / lenSq;
+      t = Math.max(0, Math.min(1, t));
+
+      const projX = p1.x + t * dx;
+      const projY = p1.y + t * dy;
+
+      const dist = Math.sqrt((pt.x - projX) ** 2 + (pt.y - projY) ** 2);
+      if (dist <= radiusMm) {
+        return line;
       }
     }
     return null;

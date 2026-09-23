@@ -6,11 +6,13 @@ import { LeftSidebar } from './components/LeftSidebar';
 import { RightSidebar } from './components/RightSidebar';
 import { MapCanvas } from './components/MapCanvas';
 import { VdaSimulator } from './components/VdaSimulator';
+import { StatusBar } from './components/StatusBar';
+import { TrafficSite } from './types/map';
 
 export default function App() {
   const [state, setState] = useState<EditorState>(initialEditorState);
+  const [vdaSelectedSite, setVdaSelectedSite] = useState<TrafficSite | null>(null);
 
-  // Custom File Import Handler
   const handleImportFiles = (files: FileList) => {
     if (!files || files.length === 0) return;
 
@@ -108,24 +110,49 @@ export default function App() {
     <div className="flex flex-col h-screen w-screen overflow-hidden bg-slate-950 font-sans text-slate-100 select-none">
       <Toolbar state={state} setState={setState} />
 
-      {state.mainTab === 'editor' ? (
-        <div className="flex flex-1 overflow-hidden relative">
-          <LeftSidebar
-            state={state}
-            setState={setState}
-            onImportFiles={handleImportFiles}
-            onExportProject={handleExportProject}
-          />
+      <div className="flex flex-1 overflow-hidden relative">
+        {state.mainTab === 'editor' && (
+          <>
+            <LeftSidebar
+              state={state}
+              setState={setState}
+              onImportFiles={handleImportFiles}
+              onExportProject={handleExportProject}
+            />
 
-          <div className="flex-1 h-full relative">
-            <MapCanvas state={state} setState={setState} />
+            <div className="flex-1 h-full relative">
+              <MapCanvas state={state} setState={setState} />
+            </div>
+
+            <RightSidebar state={state} setState={setState} />
+          </>
+        )}
+
+        {state.mainTab === 'split_view' && (
+          <div className="flex flex-1 w-full h-full overflow-hidden">
+            <div className="w-1/2 h-full border-r border-slate-800 relative">
+              <MapCanvas
+                state={state}
+                setState={setState}
+                onNodeClickForVda={(site) => setVdaSelectedSite(site)}
+              />
+            </div>
+            <div className="w-1/2 h-full overflow-hidden">
+              <VdaSimulator
+                state={state}
+                setState={setState}
+                selectedSiteFromMap={vdaSelectedSite}
+              />
+            </div>
           </div>
+        )}
 
-          <RightSidebar state={state} setState={setState} />
-        </div>
-      ) : (
-        <VdaSimulator state={state} />
-      )}
+        {state.mainTab === 'vda_simulator' && (
+          <VdaSimulator state={state} setState={setState} />
+        )}
+      </div>
+
+      <StatusBar state={state} />
     </div>
   );
 }

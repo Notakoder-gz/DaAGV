@@ -1,5 +1,5 @@
 import React from 'react';
-import { EditorState, ActiveTool, MainTab } from '../store/editorStore';
+import { EditorState, ActiveTool } from '../store/editorStore';
 import {
   Hand,
   MousePointer,
@@ -14,6 +14,7 @@ import {
   RotateCcw,
   Map,
   Cpu,
+  Columns,
 } from 'lucide-react';
 
 interface ToolbarProps {
@@ -63,8 +64,21 @@ export const Toolbar: React.FC<ToolbarProps> = ({ state, setState }) => {
           }`}
         >
           <Map className="w-4 h-4" />
-          <span>2D Map & Traffic Editor</span>
+          <span>2D Map Editor</span>
         </button>
+
+        <button
+          onClick={() => setState((prev) => ({ ...prev, mainTab: 'split_view' }))}
+          className={`flex items-center space-x-2 px-3 py-1.5 rounded-md text-xs font-semibold transition-colors ${
+            state.mainTab === 'split_view'
+              ? 'bg-blue-600 text-white shadow-sm'
+              : 'text-slate-400 hover:text-slate-200'
+          }`}
+        >
+          <Columns className="w-4 h-4" />
+          <span>Split Map & VDA</span>
+        </button>
+
         <button
           onClick={() => setState((prev) => ({ ...prev, mainTab: 'vda_simulator' }))}
           className={`flex items-center space-x-2 px-3 py-1.5 rounded-md text-xs font-semibold transition-colors ${
@@ -74,11 +88,11 @@ export const Toolbar: React.FC<ToolbarProps> = ({ state, setState }) => {
           }`}
         >
           <Cpu className="w-4 h-4" />
-          <span>VDA 5050 Command Center</span>
+          <span>VDA 5050 Command Station</span>
         </button>
       </div>
 
-      {state.mainTab === 'editor' && (
+      {state.mainTab !== 'vda_simulator' && (
         <>
           {/* Tool Selector */}
           <div className="flex items-center space-x-1 bg-slate-950 p-1 rounded-lg border border-slate-800 overflow-x-auto">
@@ -107,44 +121,6 @@ export const Toolbar: React.FC<ToolbarProps> = ({ state, setState }) => {
               );
             })}
           </div>
-
-          {state.activeTool === 'add_zone' && state.pendingZonePoints.length > 0 && (
-            <div className="flex items-center space-x-2">
-              <span className="text-xs text-amber-400 font-mono">
-                {state.pendingZonePoints.length} pts
-              </span>
-              <button
-                onClick={() => {
-                  if (state.pendingZonePoints.length >= 3) {
-                    const newZone = {
-                      id: `zone_${Date.now()}`,
-                      name: `Zone ${state.trafficMap.zones.length + 1}`,
-                      type: 'keep_out',
-                      points: state.pendingZonePoints,
-                    };
-                    setState((prev) => ({
-                      ...prev,
-                      trafficMap: {
-                        ...prev.trafficMap,
-                        zones: [...prev.trafficMap.zones, newZone],
-                      },
-                      pendingZonePoints: [],
-                      selection: { type: 'zone', id: newZone.id },
-                    }));
-                  }
-                }}
-                className="px-2.5 py-1 text-xs bg-emerald-600 hover:bg-emerald-500 rounded text-white font-medium"
-              >
-                Complete Zone
-              </button>
-              <button
-                onClick={() => setState((prev) => ({ ...prev, pendingZonePoints: [] }))}
-                className="px-2.5 py-1 text-xs bg-slate-800 hover:bg-slate-700 rounded text-slate-300"
-              >
-                Cancel
-              </button>
-            </div>
-          )}
 
           {/* Viewport Zoom Controls */}
           <div className="flex items-center space-x-1">

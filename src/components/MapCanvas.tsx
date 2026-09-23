@@ -6,9 +6,10 @@ import { TrafficSitePoint, TrafficSite, TrafficLine } from '../types/map';
 interface MapCanvasProps {
   state: EditorState;
   setState: React.Dispatch<React.SetStateAction<EditorState>>;
+  onNodeClickForVda?: (site: TrafficSite) => void;
 }
 
-export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
+export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState, onNodeClickForVda }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   const isPanning = useRef(false);
@@ -42,7 +43,6 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
     return CoordinateTransform.worldToTraffic(worldAligned.x, worldAligned.y);
   };
 
-  // Convert site millimeter coordinates to pixel space on base map
   const siteToPixel = (pt: TrafficSitePoint) => {
     const worldMeters = CoordinateTransform.trafficToWorld(pt);
     const rawWorld = CoordinateTransform.removeOffsetFromWorld(
@@ -142,7 +142,7 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
       const siteMap = new Map<number, TrafficSite>();
       trafficMap.sites.forEach((s) => siteMap.set(s.code, s));
 
-      // Draw Edges / Lines (Straight & Bezier Curves)
+      // Draw Edges
       trafficMap.lines.forEach((line) => {
         const s1 = siteMap.get(line.sites[0]);
         const s2 = siteMap.get(line.sites[1]);
@@ -156,7 +156,6 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
         ctx.beginPath();
         ctx.moveTo(p1.x, p1.y);
 
-        // Check if Bezier Curve (Type 2) with control points
         if (line.type === 2 && line.curve_control_points && line.curve_control_points.length > 0) {
           const cp1 = siteToPixel(line.curve_control_points[0]);
           if (line.curve_control_points.length >= 2) {
@@ -173,13 +172,10 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
         ctx.lineWidth = isSelected ? 4 / viewport.scale : 2 / viewport.scale;
         ctx.stroke();
 
-        // Render Control Points & Handles if Curve is selected or Type 2
         if (line.type === 2) {
           const cps = line.curve_control_points || [];
           cps.forEach((cpPoint, index) => {
             const cpPx = siteToPixel(cpPoint);
-
-            // Control Handle Line
             ctx.beginPath();
             ctx.moveTo(index === 0 ? p1.x : p2.x, index === 0 ? p1.y : p2.y);
             ctx.lineTo(cpPx.x, cpPx.y);
@@ -189,7 +185,6 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
             ctx.stroke();
             ctx.setLineDash([]);
 
-            // Control Handle Node
             ctx.beginPath();
             ctx.arc(cpPx.x, cpPx.y, 5 / viewport.scale, 0, Math.PI * 2);
             ctx.fillStyle = '#a855f7';
@@ -200,7 +195,6 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
           });
         }
 
-        // Directional Arrow Indicator
         let angle = Math.atan2(p2.y - p1.y, p2.x - p1.x);
         let midX = (p1.x + p2.x) / 2;
         let midY = (p1.y + p2.y) / 2;
@@ -225,7 +219,7 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
         ctx.restore();
       });
 
-      // Sites / Waypoints
+      // Sites
       trafficMap.sites.forEach((site) => {
         const p = siteToPixel(site.point);
         const isSelected = selection.type === 'node' && selection.id === site.code;
@@ -240,17 +234,16 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
         ctx.lineWidth = 1.5 / viewport.scale;
         ctx.stroke();
 
-        // Direction Indicator Heading Arrow if stop_dir is set
         if (site.stop_dir !== undefined && site.stop_dir >= 0) {
           const headingRad = (site.stop_dir * Math.PI) / 180.0;
           const arrowLen = 16 / viewport.scale;
           const hx = p.x + arrowLen * Math.cos(headingRad);
-          const hy = p.y - arrowLen * Math.sin(headingRad); // Inverted screen Y
+          const hy = p.y - arrowLen * Math.sin(headingRad);
 
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(hx, hy);
-          ctx.strokeStyle = '#f43f5e'; // rose-500
+          ctx.strokeStyle = '#f43f5e';
           ctx.lineWidth = 2 / viewport.scale;
           ctx.stroke();
         }
@@ -367,9 +360,18 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
       return;
     }
 
-    // Select & Drag
-    if (activeTool === 'select') {
-      // Check Bezier control point hit
+    // Select Tool
+    if (activeTool === 'select' || state.mainTab === 'split_view') {
+      const site = findSiteNearTrafficPoint(trafficPt, 500);
+      if (site) {
+        if (onNodeClickForVda) {
+          onNodeClickForVda(site);
+        }
+        isDraggingItem.current = { type: 'site', code: site.code };
+        setState((prev) => ({ ...prev, selection: { type: 'node', id: site.code } }));
+        return;
+      }
+
       for (const line of state.trafficMap.lines) {
         if (line.type === 2 && line.curve_control_points) {
           for (let idx = 0; idx < line.curve_control_points.length; idx++) {
@@ -388,15 +390,6 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
         }
       }
 
-      // Check Site hit
-      const site = findSiteNearTrafficPoint(trafficPt, 500);
-      if (site) {
-        isDraggingItem.current = { type: 'site', code: site.code };
-        setState((prev) => ({ ...prev, selection: { type: 'node', id: site.code } }));
-        return;
-      }
-
-      // Check Edge hit
       const edge = findEdgeNearTrafficPoint(trafficPt, 400);
       if (edge) {
         setState((prev) => ({ ...prev, selection: { type: 'edge', id: edge.code } }));
@@ -408,6 +401,34 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
+    if (!canvasRef.current) return;
+    const rect = canvasRef.current.getBoundingClientRect();
+    const cx = e.clientX - rect.left;
+    const cy = e.clientY - rect.top;
+
+    const px = (cx - viewport.x) / viewport.scale;
+    const py = (cy - viewport.y) / viewport.scale;
+
+    const worldRaw = CoordinateTransform.pixelToWorld(px, py, mapConfig);
+    const worldAligned = CoordinateTransform.applyOffsetToWorld(
+      worldRaw.x,
+      worldRaw.y,
+      state.projectInfo
+    );
+    const trafficPt = CoordinateTransform.worldToTraffic(worldAligned.x, worldAligned.y);
+
+    setState((prev) => ({
+      ...prev,
+      hoverCoords: {
+        pixelX: Math.round(px),
+        pixelY: Math.round(py),
+        worldX: parseFloat(worldAligned.x.toFixed(3)),
+        worldY: parseFloat(worldAligned.y.toFixed(3)),
+        trafficX: trafficPt.x,
+        trafficY: trafficPt.y,
+      },
+    }));
+
     if (isPanning.current) {
       setState((prev) => ({
         ...prev,
@@ -425,10 +446,7 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
       return;
     }
 
-    // Dragging site or Bezier control point
     if (isDraggingItem.current && activeTool === 'select') {
-      const trafficPt = clientToTraffic(e.clientX, e.clientY);
-
       if (isDraggingItem.current.type === 'site') {
         const siteCode = isDraggingItem.current.code;
         setState((prev) => ({
@@ -507,7 +525,6 @@ export const MapCanvas: React.FC<MapCanvasProps> = ({ state, setState }) => {
       const p1 = s1.point;
       const p2 = s2.point;
 
-      // Distance from point pt to line segment p1-p2
       const dx = p2.x - p1.x;
       const dy = p2.y - p1.y;
       const lenSq = dx * dx + dy * dy;

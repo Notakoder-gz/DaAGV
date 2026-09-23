@@ -10,7 +10,7 @@ export type ActiveTool =
   | 'add_edge'
   | 'add_zone';
 
-export type MainTab = 'editor' | 'vda_simulator';
+export type MainTab = 'editor' | 'vda_simulator' | 'split_view';
 
 export interface LayerState {
   visible: boolean;
@@ -20,7 +20,15 @@ export interface LayerState {
 export interface SelectionState {
   type: 'node' | 'edge' | 'zone' | 'control_point' | null;
   id: number | string | null;
-  controlPointIndex?: number; // For Bezier curve control points
+  controlPointIndex?: number;
+}
+
+export interface MqttConfig {
+  ip: string;
+  port: number;
+  clientId: string;
+  topicPrefix: string;
+  connected: boolean;
 }
 
 export interface EditorState {
@@ -61,7 +69,7 @@ export interface EditorState {
 
   // Brush / Eraser Settings
   brush: {
-    size: number; // pixels
+    size: number;
     value: 0 | 255 | 128;
   };
 
@@ -71,6 +79,19 @@ export interface EditorState {
     y: number;
     scale: number;
   };
+
+  // Hover Coordinates
+  hoverCoords: {
+    pixelX: number;
+    pixelY: number;
+    worldX: number;
+    worldY: number;
+    trafficX: number;
+    trafficY: number;
+  };
+
+  // MQTT Connection State
+  mqtt: MqttConfig;
 }
 
 export const initialEditorState: EditorState = {
@@ -124,5 +145,20 @@ export const initialEditorState: EditorState = {
     x: 400,
     y: 300,
     scale: 0.8,
+  },
+  hoverCoords: {
+    pixelX: 0,
+    pixelY: 0,
+    worldX: 0,
+    worldY: 0,
+    trafficX: 0,
+    trafficY: 0,
+  },
+  mqtt: {
+    ip: '192.168.1.100',
+    port: 1883,
+    clientId: 'amr_editor_client',
+    topicPrefix: 'uagv/v2/XRobot/AMR-001',
+    connected: false,
   },
 };

@@ -6,8 +6,9 @@ import { LeftSidebar } from './components/LeftSidebar';
 import { RightSidebar } from './components/RightSidebar';
 import { MapCanvas } from './components/MapCanvas';
 import { VdaSimulator } from './components/VdaSimulator';
+import { FaqView } from './components/FaqView';
 import { StatusBar } from './components/StatusBar';
-import { TrafficSite } from './types/map';
+import { TrafficSite, TrafficMap } from './types/map';
 
 export default function App() {
   const [state, setState] = useState<EditorState>(initialEditorState);
@@ -16,28 +17,41 @@ export default function App() {
   const handleImportFiles = (files: FileList) => {
     if (!files || files.length === 0) return;
 
+    const trafficMapDict: Record<string, TrafficMap> = { ...state.trafficMaps };
+    let newMapConfig = state.mapConfig;
+    let newProjectInfo = state.projectInfo;
+    let newBaseCanvas = state.baseMapCanvas;
+
     Array.from(files).forEach((file) => {
       const reader = new FileReader();
 
       if (file.name === 'map.json') {
         reader.onload = (event) => {
           const text = event.target?.result as string;
-          const mapConfig = MapSerializer.parseMapJson(text);
-          setState((prev) => ({ ...prev, mapConfig }));
+          newMapConfig = MapSerializer.parseMapJson(text);
+          setState((prev) => ({ ...prev, mapConfig: newMapConfig }));
         };
         reader.readAsText(file);
       } else if (file.name === 'project_info.json') {
         reader.onload = (event) => {
           const text = event.target?.result as string;
-          const projectInfo = MapSerializer.parseProjectInfo(text);
-          setState((prev) => ({ ...prev, projectInfo }));
+          newProjectInfo = MapSerializer.parseProjectInfo(text);
+          setState((prev) => ({ ...prev, projectInfo: newProjectInfo }));
         };
         reader.readAsText(file);
       } else if (file.name.endsWith('.json')) {
         reader.onload = (event) => {
           const text = event.target?.result as string;
-          const trafficMap = MapSerializer.parseTrafficMap(text);
-          setState((prev) => ({ ...prev, trafficMap }));
+          const parsedTraffic = MapSerializer.parseTrafficMap(text);
+          parsedTraffic.filename = file.name;
+          trafficMapDict[file.name] = parsedTraffic;
+
+          setState((prev) => ({
+            ...prev,
+            trafficMaps: { ...prev.trafficMaps, ...trafficMapDict },
+            activeTrafficMapKey: file.name,
+            trafficMap: parsedTraffic,
+          }));
         };
         reader.readAsText(file);
       } else if (
@@ -56,9 +70,10 @@ export default function App() {
             const ctx = offscreenCanvas.getContext('2d');
             if (ctx) ctx.drawImage(img, 0, 0);
 
+            newBaseCanvas = offscreenCanvas;
             setState((prev) => ({
               ...prev,
-              baseMapCanvas: offscreenCanvas,
+              baseMapCanvas: newBaseCanvas,
               baseMapLoaded: true,
               mapConfig: { ...prev.mapConfig, width: img.width, height: img.height },
             }));
@@ -76,7 +91,7 @@ export default function App() {
 
     downloadFile(
       serializedTraffic,
-      `${state.projectInfo.project_id || 'map'}_traffic.json`,
+      `${state.activeTrafficMapKey || 'traffic.json'}`,
       'application/json'
     );
     downloadFile(serializedMap, 'map.json', 'application/json');
@@ -150,6 +165,8 @@ export default function App() {
         {state.mainTab === 'vda_simulator' && (
           <VdaSimulator state={state} setState={setState} />
         )}
+
+        {state.mainTab === 'faq' && <FaqView />}
       </div>
 
       <StatusBar state={state} />

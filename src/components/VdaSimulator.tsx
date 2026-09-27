@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { EditorState } from '../store/editorStore';
 import { VdaOrderPayload, VdaNode, VdaEdge, TrafficSite } from '../types/map';
+import mqtt, { MqttClient } from 'mqtt';
 import {
   Terminal,
   Send,
@@ -11,7 +12,8 @@ import {
   FileCode,
   Wifi,
   Radio,
-  SlidersHorizontal,
+  Pause,
+  RotateCcw,
 } from 'lucide-react';
 
 interface VdaSimulatorProps {
@@ -24,6 +26,8 @@ export const VdaSimulator: React.FC<VdaSimulatorProps> = ({ state, setState, sel
   const [selectedSiteCode, setSelectedSiteCode] = useState<number | ''>('');
   const [actionType, setActionType] = useState<string>('pick');
   const [activeSubTab, setActiveSubTab] = useState<'inspector' | 'template' | 'mqtt'>('inspector');
+
+  const mqttClientRef = useRef<MqttClient | null>(null);
 
   const [orderLogs, setOrderLogs] = useState<Array<{ time: string; type: string; message: string }>>([
     {
@@ -51,7 +55,6 @@ export const VdaSimulator: React.FC<VdaSimulatorProps> = ({ state, setState, sel
 
   const [jsonError, setJsonError] = useState<string | null>(null);
 
-  // Template State
   const [vdaTemplate, setVdaTemplate] = useState<{
     version: string;
     manufacturer: string;
@@ -64,7 +67,94 @@ export const VdaSimulator: React.FC<VdaSimulatorProps> = ({ state, setState, sel
     defaultMaxSpeed: 1.5,
   });
 
-  // Handle direct JSON string edits
+  // Automatically add node if selected from split view
+  useEffect(() => {
+    if (selectedSiteFromMap) {
+      addSiteToOrder(selectedSiteFromMap);
+    }
+  }, [selectedSiteFromMap]);
+
+  // MQTT Connection Logic
+  const toggleMqttConnection = () => {
+    if (state.mqtt.connected) {
+      if (mqttClientRef.current) {
+        mqttClientRef.current.end();
+        mqttClientRef.current = null;
+      }
+      setState((prev) => ({
+        ...prev,
+        mqtt: { ...prev.mqtt, connected: false },
+      }));
+      setOrderLogs((prev) => [
+        ...prev,
+        {
+          time: new Date().toLocaleTimeString(),
+          type: 'info',
+          message: 'Disconnected from MQTT Broker.',
+        },
+      ]);
+    } else {
+      try {
+        const brokerUrl = `ws://${state.mqtt.ip}:${state.mqtt.port}`;
+        const client = mqtt.connect(brokerUrl, {
+          clientId: `${state.mqtt.clientId}_${Math.random().toString(16).substring(2, 8)}`,
+          connectTimeout: 4000,
+        });
+
+        client.on('connect', () => {
+          setState((prev) => ({
+            ...prev,
+            mqtt: { ...prev.mqtt, connected: true },
+          }));
+          setOrderLogs((prev) => [
+            ...prev,
+            {
+              time: new Date().toLocaleTimeString(),
+              type: 'success',
+              message: `Connected to MQTT Broker @ ${brokerUrl}`,
+            },
+          ]);
+
+          // Subscribe to state topic
+          client.subscribe(`${state.mqtt.topicPrefix}/state`);
+        });
+
+        client.on('message', (topic, message) => {
+          setOrderLogs((prev) => [
+            ...prev,
+            {
+              time: new Date().toLocaleTimeString(),
+              type: 'info',
+              message: `[MQTT RECV ${topic}]: ${message.toString()}`,
+            },
+          ]);
+        });
+
+        client.on('error', (err) => {
+          setOrderLogs((prev) => [
+            ...prev,
+            {
+              time: new Date().toLocaleTimeString(),
+              type: 'warning',
+              message: `MQTT Connection Error: ${err.message}`,
+            },
+          ]);
+        });
+
+        mqttClientRef.current = client;
+      } catch (e: any) {
+        setOrderLogs((prev) => [
+          ...prev,
+          {
+            time: new Date().toLocaleTimeString(),
+            type: 'warning',
+            message: `Failed to initiate MQTT client: ${e.message}`,
+          },
+        ]);
+      }
+    }
+  };
+
   const handleJsonTextChange = (text: string) => {
     setJsonStringText(text);
     try {
@@ -145,12 +235,51 @@ export const VdaSimulator: React.FC<VdaSimulatorProps> = ({ state, setState, sel
   const handleDispatchOrder = () => {
     if (currentOrder.nodes.length === 0) return;
 
+    const topic = `${state.mqtt.topicPrefix}/order`;
+    const payload = JSON.stringify(currentOrder);
+
+    if (mqttClientRef.current && state.mqtt.connected) {
+      mqttClientRef.current.publish(topic, payload);
+    }
+
     setOrderLogs((prev) => [
       ...prev,
       {
         time: new Date().toLocaleTimeString(),
         type: 'dispatch',
-        message: `Dispatched VDA 5050 Order [${currentOrder.orderId}] to ${state.mqtt.ip}:${state.mqtt.port}/${state.mqtt.topicPrefix}/order`,
+        message: `Dispatched VDA 5050 Order [${currentOrder.orderId}] (${currentOrder.nodes.length} nodes) to topic: ${topic}`,
+      },
+    ]);
+  };
+
+  const sendInstantAction = (actionName: string) => {
+    const instantTopic = `${state.mqtt.topicPrefix}/instantActions`;
+    const instantPayload = {
+      headerId: Math.floor(Math.random() * 10000),
+      timestamp: new Date().toISOString(),
+      version: vdaTemplate.version,
+      manufacturer: vdaTemplate.manufacturer,
+      serialNumber: vdaTemplate.serialNumber,
+      actions: [
+        {
+          actionType: actionName,
+          actionId: `inst_${Date.now()}`,
+          actionDescription: `Instant action ${actionName}`,
+          actionParameters: [],
+        },
+      ],
+    };
+
+    if (mqttClientRef.current && state.mqtt.connected) {
+      mqttClientRef.current.publish(instantTopic, JSON.stringify(instantPayload));
+    }
+
+    setOrderLogs((prev) => [
+      ...prev,
+      {
+        time: new Date().toLocaleTimeString(),
+        type: 'warning',
+        message: `SENT INSTANT ACTION [${actionName}] to ${instantTopic}`,
       },
     ]);
   };
@@ -180,7 +309,7 @@ export const VdaSimulator: React.FC<VdaSimulatorProps> = ({ state, setState, sel
   };
 
   return (
-    <div className="flex flex-1 h-full bg-slate-950 text-slate-100 overflow-hidden font-sans">
+    <div className="flex flex-1 h-full bg-slate-950 text-slate-100 overflow-hidden font-sans select-none">
       {/* Left Mission Builder & Config Panel */}
       <div className="w-96 bg-slate-900 border-r border-slate-800 p-4 flex flex-col justify-between overflow-y-auto">
         <div className="space-y-5">
@@ -270,9 +399,9 @@ export const VdaSimulator: React.FC<VdaSimulatorProps> = ({ state, setState, sel
                     <option value="pick">Pick Load / Pallet (pick)</option>
                     <option value="drop">Drop Load / Pallet (drop)</option>
                     <option value="charge">Dock & Charge (charge)</option>
-                    <option value="pause">Pause Vehicle (pause)</option>
+                    <option value="pause font-normal">Pause Vehicle (pause)</option>
                     <option value="cancelOrder">Cancel Order (cancelOrder)</option>
-                    <option value="none font-normal">None (Navigate Only)</option>
+                    <option value="none">None (Navigate Only)</option>
                   </select>
                 </div>
 
@@ -289,39 +418,34 @@ export const VdaSimulator: React.FC<VdaSimulatorProps> = ({ state, setState, sel
               {/* Instant Safety Controls */}
               <div className="space-y-2">
                 <h3 className="text-[10px] font-semibold uppercase tracking-wider text-slate-400">
-                  Instant Safety Controls
+                  Instant Safety Commands (`instantActions`)
                 </h3>
                 <div className="grid grid-cols-2 gap-2">
                   <button
-                    onClick={() =>
-                      setOrderLogs((prev) => [
-                        ...prev,
-                        {
-                          time: new Date().toLocaleTimeString(),
-                          type: 'warning',
-                          message: 'EMERGENCY STOP (eStop) DISPATCHED',
-                        },
-                      ])
-                    }
+                    onClick={() => sendInstantAction('eStop')}
                     className="px-3 py-2 bg-red-950/80 border border-red-800 text-red-300 hover:bg-red-900 font-semibold rounded-lg text-xs flex items-center space-x-1.5"
                   >
                     <AlertTriangle className="w-4 h-4 text-red-400" />
                     <span>eStop</span>
                   </button>
                   <button
-                    onClick={() =>
-                      setOrderLogs((prev) => [
-                        ...prev,
-                        {
-                          time: new Date().toLocaleTimeString(),
-                          type: 'info',
-                          message: 'PAUSE MOTION DISPATCHED',
-                        },
-                      ])
-                    }
-                    className="px-3 py-2 bg-amber-950/80 border border-amber-800 text-amber-300 hover:bg-amber-900 font-semibold rounded-lg text-xs"
+                    onClick={() => sendInstantAction('pause')}
+                    className="px-3 py-2 bg-amber-950/80 border border-amber-800 text-amber-300 hover:bg-amber-900 font-semibold rounded-lg text-xs flex items-center space-x-1.5"
                   >
-                    Pause
+                    <Pause className="w-4 h-4 text-amber-400" />
+                    <span>Pause</span>
+                  </button>
+                  <button
+                    onClick={() => sendInstantAction('startCharging')}
+                    className="px-3 py-2 bg-blue-950/80 border border-blue-800 text-blue-300 hover:bg-blue-900 font-semibold rounded-lg text-xs"
+                  >
+                    Charge
+                  </button>
+                  <button
+                    onClick={() => sendInstantAction('cancelOrder')}
+                    className="px-3 py-2 bg-purple-950/80 border border-purple-800 text-purple-300 hover:bg-purple-900 font-semibold rounded-lg text-xs"
+                  >
+                    Cancel Order
                   </button>
                 </div>
               </div>
@@ -405,7 +529,7 @@ export const VdaSimulator: React.FC<VdaSimulatorProps> = ({ state, setState, sel
               </div>
 
               <div>
-                <label className="text-slate-400">Port:</label>
+                <label className="text-slate-400">WebSocket / TCP Port:</label>
                 <input
                   type="number"
                   value={state.mqtt.port}
@@ -435,22 +559,7 @@ export const VdaSimulator: React.FC<VdaSimulatorProps> = ({ state, setState, sel
               </div>
 
               <button
-                onClick={() => {
-                  setState((prev) => ({
-                    ...prev,
-                    mqtt: { ...prev.mqtt, connected: !prev.mqtt.connected },
-                  }));
-                  setOrderLogs((prev) => [
-                    ...prev,
-                    {
-                      time: new Date().toLocaleTimeString(),
-                      type: state.mqtt.connected ? 'info' : 'success',
-                      message: state.mqtt.connected
-                        ? 'Disconnected from MQTT Broker.'
-                        : `Connected to MQTT Broker @ tcp://${state.mqtt.ip}:${state.mqtt.port}`,
-                    },
-                  ]);
-                }}
+                onClick={toggleMqttConnection}
                 className={`w-full py-2 rounded font-semibold text-xs transition-colors ${
                   state.mqtt.connected
                     ? 'bg-red-900/60 border border-red-700 text-red-200 hover:bg-red-900'
@@ -475,9 +584,10 @@ export const VdaSimulator: React.FC<VdaSimulatorProps> = ({ state, setState, sel
           </button>
           <button
             onClick={handleClearOrder}
-            className="w-full text-slate-400 hover:text-slate-200 text-xs py-1 text-center"
+            className="w-full text-slate-400 hover:text-slate-200 text-xs py-1 text-center flex items-center justify-center space-x-1"
           >
-            Clear Sequence Queue
+            <RotateCcw className="w-3.5 h-3.5" />
+            <span>Clear Sequence Queue</span>
           </button>
         </div>
       </div>

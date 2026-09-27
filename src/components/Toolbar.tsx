@@ -15,6 +15,7 @@ import {
   Map,
   Cpu,
   Columns,
+  HelpCircle,
 } from 'lucide-react';
 
 interface ToolbarProps {
@@ -88,11 +89,23 @@ export const Toolbar: React.FC<ToolbarProps> = ({ state, setState }) => {
           }`}
         >
           <Cpu className="w-4 h-4" />
-          <span>VDA 5050 Command Station</span>
+          <span>VDA 5050 Station</span>
+        </button>
+
+        <button
+          onClick={() => setState((prev) => ({ ...prev, mainTab: 'faq' }))}
+          className={`flex items-center space-x-2 px-3 py-1.5 rounded-md text-xs font-semibold transition-colors ${
+            state.mainTab === 'faq'
+              ? 'bg-blue-600 text-white shadow-sm'
+              : 'text-slate-400 hover:text-slate-200'
+          }`}
+        >
+          <HelpCircle className="w-4 h-4" />
+          <span>FAQ & Guide</span>
         </button>
       </div>
 
-      {state.mainTab !== 'vda_simulator' && (
+      {(state.mainTab === 'editor' || state.mainTab === 'split_view') && (
         <>
           {/* Tool Selector */}
           <div className="flex items-center space-x-1 bg-slate-950 p-1 rounded-lg border border-slate-800 overflow-x-auto">

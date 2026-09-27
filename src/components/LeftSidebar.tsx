@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { EditorState } from '../store/editorStore';
-import { Eye, EyeOff, Layers, Upload, Download, Paintbrush, Eraser } from 'lucide-react';
+import { Eye, EyeOff, Layers, FolderPlus, Download, Paintbrush, Eraser, MapPin } from 'lucide-react';
 
 interface LeftSidebarProps {
   state: EditorState;
@@ -16,6 +16,7 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
   onExportProject,
 }) => {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const folderInputRef = useRef<HTMLInputElement | null>(null);
 
   const toggleLayerVisibility = (layerKey: 'baseMap' | 'trafficMap') => {
     setState((prev) => ({
@@ -50,6 +51,18 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
     }
   };
 
+  const handleSelectTrafficMapKey = (key: string) => {
+    setState((prev) => {
+      const selectedMap = prev.trafficMaps[key];
+      if (!selectedMap) return prev;
+      return {
+        ...prev,
+        activeTrafficMapKey: key,
+        trafficMap: selectedMap,
+      };
+    });
+  };
+
   return (
     <div className="w-80 bg-slate-900 border-r border-slate-800 flex flex-col justify-between h-full select-none text-xs">
       <input
@@ -61,7 +74,18 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
         className="hidden"
       />
 
-      <div className="p-4 space-y-6 overflow-y-auto">
+      <input
+        type="file"
+        ref={folderInputRef}
+        onChange={handleFileChange}
+        // @ts-ignore
+        webkitdirectory="true"
+        directory="true"
+        multiple
+        className="hidden"
+      />
+
+      <div className="p-4 space-y-5 overflow-y-auto">
         {/* Header */}
         <div>
           <h2 className="text-sm font-bold text-white flex items-center space-x-2">
@@ -69,26 +93,55 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
             <span>Map Workspace & Layers</span>
           </h2>
           <p className="text-slate-400 mt-0.5 font-mono">
-            ID: {state.projectInfo.project_id || 'Untitled Project'}
+            Project ID: {state.projectInfo.project_id || 'Untitled Project'}
           </p>
         </div>
 
-        {/* Project Import / File Management */}
-        <div className="bg-slate-950 p-3 rounded-lg border border-slate-800 space-y-3">
+        {/* Project Folder & File Upload */}
+        <div className="bg-slate-950 p-3 rounded-lg border border-slate-800 space-y-2">
           <div className="flex items-center justify-between text-slate-300 font-medium">
             <span className="flex items-center space-x-1.5">
-              <Upload className="w-3.5 h-3.5 text-amber-500" />
-              <span>Project Import</span>
+              <FolderPlus className="w-3.5 h-3.5 text-amber-500" />
+              <span>Load Project Folder</span>
             </span>
           </div>
 
-          <button
-            onClick={() => fileInputRef.current?.click()}
-            className="w-full py-2 bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/40 text-blue-300 font-semibold rounded-lg text-xs transition-colors"
-          >
-            Load Map Files (.json, .png, .yaml)
-          </button>
+          <div className="grid grid-cols-2 gap-2">
+            <button
+              onClick={() => folderInputRef.current?.click()}
+              className="py-2 bg-amber-600/20 hover:bg-amber-600/30 border border-amber-500/40 text-amber-300 font-semibold rounded-lg text-[11px] transition-colors"
+            >
+              Load Folder
+            </button>
+            <button
+              onClick={() => fileInputRef.current?.click()}
+              className="py-2 bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/40 text-blue-300 font-semibold rounded-lg text-[11px] transition-colors"
+            >
+              Select Files
+            </button>
+          </div>
         </div>
+
+        {/* Multi-Traffic Map Selector */}
+        {Object.keys(state.trafficMaps).length > 0 && (
+          <div className="bg-slate-950 p-3 rounded-lg border border-slate-800 space-y-2">
+            <div className="flex items-center space-x-1.5 text-slate-300 font-medium">
+              <MapPin className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Active Traffic Graph Map</span>
+            </div>
+            <select
+              value={state.activeTrafficMapKey}
+              onChange={(e) => handleSelectTrafficMapKey(e.target.value)}
+              className="w-full bg-slate-900 border border-slate-800 px-2.5 py-1.5 rounded text-slate-200 text-xs font-mono"
+            >
+              {Object.keys(state.trafficMaps).map((key) => (
+                <option key={key} value={key}>
+                  {key} ({state.trafficMaps[key].sites?.length || 0} sites)
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
 
         {/* Layers Control */}
         <div className="space-y-3">

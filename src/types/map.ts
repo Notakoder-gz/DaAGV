@@ -5,9 +5,9 @@ export interface MapOrigin {
 }
 
 export interface MapConfig {
-  width: number; // pixels
-  height: number; // pixels
-  resolution: number; // meters per pixel
+  width: number;
+  height: number;
+  resolution: number;
   origin: MapOrigin;
   free_th: number;
   occ_th: number;
@@ -30,12 +30,12 @@ export interface TrafficSite {
   code: number;
   name: string;
   point: TrafficSitePoint;
-  type: number; // 1=waypoint, 3=charger, 6=spin, 7=pallet pickup/drop
+  type: number;
   collision?: number;
   full_collision?: number;
   rotate_enable?: boolean;
   rotation_speed?: number;
-  stop_dir?: number; // Heading angle in degrees (-1 or 0..360)
+  stop_dir?: number;
   ban_dir?: number;
   allow_avoid?: boolean;
   allow_close_fork_foot_photoelectric?: boolean;
@@ -63,16 +63,16 @@ export interface TrafficCollision {
 export interface TrafficLine {
   code: number;
   name: string;
-  sites: [number, number]; // [start_site_code, end_site_code]
-  type: number; // 1 = straight, 2 = bezier curve
+  sites: [number, number];
+  type: number;
   speed?: number;
   full_speed?: number;
   allow_back?: boolean;
   allow_close_fork_foot_photoelectric?: boolean;
   allow_obstacle_avoid?: boolean;
-  body_dir?: number; // Robot body heading orientation (deg)
-  goods_dir?: number; // Loaded goods orientation (deg)
-  path_dir?: number; // 0 = unidirectional, 1 = bidirectional
+  body_dir?: number;
+  goods_dir?: number;
+  path_dir?: number;
   path_length?: number;
   navigation_type?: number;
   obstacle_avoid_type?: number;
@@ -93,7 +93,7 @@ export interface TrafficZone {
   name: string;
   type: 'keep_out' | 'speed_limit' | 'loading' | string;
   speed_limit?: number;
-  points: Array<TrafficSitePoint>; // in mm
+  points: Array<TrafficSitePoint>;
   color?: string;
 }
 
@@ -116,10 +116,20 @@ export interface TrafficMapInfo {
 }
 
 export interface TrafficMap {
+  filename?: string;
   map_info: TrafficMapInfo;
   sites: TrafficSite[];
   lines: TrafficLine[];
   zones: TrafficZone[];
+}
+
+export interface LoadedProject {
+  id: string;
+  mapConfig: MapConfig;
+  projectInfo: ProjectInfo;
+  trafficMaps: Record<string, TrafficMap>; // map filename -> TrafficMap
+  selectedTrafficMapKey: string;
+  imageCanvas: HTMLCanvasElement | null;
 }
 
 export interface RosYamlMap {
@@ -132,7 +142,7 @@ export interface RosYamlMap {
 }
 
 export interface VdaAction {
-  actionType: string; // e.g. 'pick', 'drop', 'charge', 'pause', 'cancelOrder'
+  actionType: string;
   actionId: string;
   actionDescription?: string;
   actionParameters?: Array<{ key: string; value: string | number | boolean }>;

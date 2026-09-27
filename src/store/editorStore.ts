@@ -10,7 +10,7 @@ export type ActiveTool =
   | 'add_edge'
   | 'add_zone';
 
-export type MainTab = 'editor' | 'vda_simulator' | 'split_view';
+export type MainTab = 'editor' | 'vda_simulator' | 'split_view' | 'faq';
 
 export interface LayerState {
   visible: boolean;
@@ -37,6 +37,12 @@ export interface EditorState {
   // Map Data
   mapConfig: MapConfig;
   projectInfo: ProjectInfo;
+
+  // Multi-traffic map support
+  trafficMaps: Record<string, TrafficMap>;
+  activeTrafficMapKey: string;
+
+  // Convenience getter for active traffic map
   trafficMap: TrafficMap;
 
   // Base Map Image Canvas element
@@ -61,10 +67,10 @@ export interface EditorState {
 
   // Alignment Temp State
   alignmentOffset: {
-    x: number; // mm
-    y: number; // mm
-    theta: number; // deg
-    scale: number; // multiplier e.g. 1.0
+    x: number;
+    y: number;
+    theta: number;
+    scale: number;
   };
 
   // Brush / Eraser Settings
@@ -94,6 +100,18 @@ export interface EditorState {
   mqtt: MqttConfig;
 }
 
+const defaultTrafficMap: TrafficMap = {
+  filename: 'DEMO.json',
+  map_info: {
+    name: 'DEMO',
+    project_id: 'new_project',
+    map_name: 'new_project@DEMO',
+  },
+  sites: [],
+  lines: [],
+  zones: [],
+};
+
 export const initialEditorState: EditorState = {
   mainTab: 'editor',
   mapConfig: {
@@ -111,16 +129,11 @@ export const initialEditorState: EditorState = {
     map_origin_offset_theta: 0,
     navi_type: 1,
   },
-  trafficMap: {
-    map_info: {
-      name: 'DEMO',
-      project_id: 'new_project',
-      map_name: 'new_project@DEMO',
-    },
-    sites: [],
-    lines: [],
-    zones: [],
+  trafficMaps: {
+    'DEMO.json': defaultTrafficMap,
   },
+  activeTrafficMapKey: 'DEMO.json',
+  trafficMap: defaultTrafficMap,
   baseMapCanvas: null,
   baseMapLoaded: false,
   activeTool: 'pan',
